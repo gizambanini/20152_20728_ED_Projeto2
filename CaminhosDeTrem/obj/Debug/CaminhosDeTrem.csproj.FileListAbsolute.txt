@@ -2,8 +2,8 @@ C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\bin\Debug\CaminhosDeTrem.
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\bin\Debug\CaminhosDeTrem.exe
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\bin\Debug\CaminhosDeTrem.pdb
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.csprojAssemblyReference.cache
-C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.Form1.resources
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.Properties.Resources.resources
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.csproj.GenerateResource.cache
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.exe
 C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.pdb
+C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\obj\Debug\CaminhosDeTrem.FrmCaminho.resources

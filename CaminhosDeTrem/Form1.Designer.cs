@@ -1,6 +1,6 @@
 ﻿namespace CaminhosDeTrem
 {
-    partial class Form1
+    partial class FrmCaminho
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,12 @@
         {
             this.tbApp = new System.Windows.Forms.TabControl();
             this.tbMapa = new System.Windows.Forms.TabPage();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtFim = new System.Windows.Forms.TextBox();
+            this.txtInicio = new System.Windows.Forms.TextBox();
             this.lsbCaminho = new System.Windows.Forms.ListBox();
             this.lbResultado = new System.Windows.Forms.Label();
-            this.upFim = new System.Windows.Forms.NumericUpDown();
             this.lbFinal = new System.Windows.Forms.Label();
-            this.upInicio = new System.Windows.Forms.NumericUpDown();
             this.lbInicio = new System.Windows.Forms.Label();
             this.pbMapa = new System.Windows.Forms.PictureBox();
             this.tbArvore = new System.Windows.Forms.TabPage();
@@ -47,6 +48,12 @@
             this.txtNomeRem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbIncluirLigacoes = new System.Windows.Forms.GroupBox();
+            this.upPreco = new System.Windows.Forms.NumericUpDown();
+            this.upDistancia = new System.Windows.Forms.NumericUpDown();
+            this.lbPreco = new System.Windows.Forms.Label();
+            this.lbDistancia = new System.Windows.Forms.Label();
+            this.txtCidade2 = new System.Windows.Forms.TextBox();
+            this.lbCidade2 = new System.Windows.Forms.Label();
             this.txtCidade1 = new System.Windows.Forms.TextBox();
             this.lbCidade1 = new System.Windows.Forms.Label();
             this.btnIncluirLig = new System.Windows.Forms.Button();
@@ -58,24 +65,16 @@
             this.lbCoordX = new System.Windows.Forms.Label();
             this.txtNomeInc = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.txtCidade2 = new System.Windows.Forms.TextBox();
-            this.lbCidade2 = new System.Windows.Forms.Label();
-            this.lbDistancia = new System.Windows.Forms.Label();
-            this.lbPreco = new System.Windows.Forms.Label();
-            this.upDistancia = new System.Windows.Forms.NumericUpDown();
-            this.upPreco = new System.Windows.Forms.NumericUpDown();
             this.tbApp.SuspendLayout();
             this.tbMapa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upFim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.upInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapa)).BeginInit();
             this.tbArvore.SuspendLayout();
             this.tbOperacoes.SuspendLayout();
             this.gbRemoverCidade.SuspendLayout();
             this.gbIncluirLigacoes.SuspendLayout();
-            this.gbIncluirCidade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upPreco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).BeginInit();
+            this.gbIncluirCidade.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbApp
@@ -94,11 +93,12 @@
             // 
             // tbMapa
             // 
+            this.tbMapa.Controls.Add(this.btnBuscar);
+            this.tbMapa.Controls.Add(this.txtFim);
+            this.tbMapa.Controls.Add(this.txtInicio);
             this.tbMapa.Controls.Add(this.lsbCaminho);
             this.tbMapa.Controls.Add(this.lbResultado);
-            this.tbMapa.Controls.Add(this.upFim);
             this.tbMapa.Controls.Add(this.lbFinal);
-            this.tbMapa.Controls.Add(this.upInicio);
             this.tbMapa.Controls.Add(this.lbInicio);
             this.tbMapa.Controls.Add(this.pbMapa);
             this.tbMapa.Location = new System.Drawing.Point(4, 25);
@@ -109,11 +109,35 @@
             this.tbMapa.Text = "Mapa";
             this.tbMapa.UseVisualStyleBackColor = true;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(98, 207);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(120, 52);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtFim
+            // 
+            this.txtFim.Location = new System.Drawing.Point(98, 100);
+            this.txtFim.Name = "txtFim";
+            this.txtFim.Size = new System.Drawing.Size(164, 22);
+            this.txtFim.TabIndex = 8;
+            // 
+            // txtInicio
+            // 
+            this.txtInicio.Location = new System.Drawing.Point(98, 33);
+            this.txtInicio.Name = "txtInicio";
+            this.txtInicio.Size = new System.Drawing.Size(164, 22);
+            this.txtInicio.TabIndex = 7;
+            // 
             // lsbCaminho
             // 
             this.lsbCaminho.FormattingEnabled = true;
             this.lsbCaminho.ItemHeight = 16;
-            this.lsbCaminho.Location = new System.Drawing.Point(33, 258);
+            this.lsbCaminho.Location = new System.Drawing.Point(33, 345);
             this.lsbCaminho.Name = "lsbCaminho";
             this.lsbCaminho.Size = new System.Drawing.Size(302, 148);
             this.lsbCaminho.TabIndex = 6;
@@ -122,43 +146,27 @@
             // 
             this.lbResultado.AutoSize = true;
             this.lbResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResultado.Location = new System.Drawing.Point(28, 230);
+            this.lbResultado.Location = new System.Drawing.Point(28, 317);
             this.lbResultado.Name = "lbResultado";
             this.lbResultado.Size = new System.Drawing.Size(105, 25);
             this.lbResultado.TabIndex = 5;
             this.lbResultado.Text = "Resultado:";
             // 
-            // upFim
-            // 
-            this.upFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upFim.Location = new System.Drawing.Point(97, 94);
-            this.upFim.Name = "upFim";
-            this.upFim.Size = new System.Drawing.Size(57, 30);
-            this.upFim.TabIndex = 4;
-            // 
             // lbFinal
             // 
             this.lbFinal.AutoSize = true;
             this.lbFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFinal.Location = new System.Drawing.Point(28, 96);
+            this.lbFinal.Location = new System.Drawing.Point(28, 97);
             this.lbFinal.Name = "lbFinal";
             this.lbFinal.Size = new System.Drawing.Size(50, 25);
             this.lbFinal.TabIndex = 3;
             this.lbFinal.Text = "Fim:";
             // 
-            // upInicio
-            // 
-            this.upInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upInicio.Location = new System.Drawing.Point(97, 27);
-            this.upInicio.Name = "upInicio";
-            this.upInicio.Size = new System.Drawing.Size(57, 30);
-            this.upInicio.TabIndex = 2;
-            // 
             // lbInicio
             // 
             this.lbInicio.AutoSize = true;
             this.lbInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInicio.Location = new System.Drawing.Point(28, 29);
+            this.lbInicio.Location = new System.Drawing.Point(28, 30);
             this.lbInicio.Name = "lbInicio";
             this.lbInicio.Size = new System.Drawing.Size(63, 25);
             this.lbInicio.TabIndex = 1;
@@ -169,11 +177,14 @@
             this.pbMapa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbMapa.ImageLocation = "C:\\Users\\pedro\\Downloads\\a.jpeg";
             this.pbMapa.Location = new System.Drawing.Point(451, 27);
             this.pbMapa.Name = "pbMapa";
             this.pbMapa.Size = new System.Drawing.Size(567, 593);
+            this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 0;
             this.pbMapa.TabStop = false;
+            this.pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
             // 
             // tbArvore
             // 
@@ -297,6 +308,54 @@
             this.gbIncluirLigacoes.TabStop = false;
             this.gbIncluirLigacoes.Text = "Inclusão de Ligações entre Cidades";
             // 
+            // upPreco
+            // 
+            this.upPreco.Location = new System.Drawing.Point(535, 138);
+            this.upPreco.Name = "upPreco";
+            this.upPreco.Size = new System.Drawing.Size(63, 30);
+            this.upPreco.TabIndex = 15;
+            // 
+            // upDistancia
+            // 
+            this.upDistancia.Location = new System.Drawing.Point(535, 61);
+            this.upDistancia.Name = "upDistancia";
+            this.upDistancia.Size = new System.Drawing.Size(63, 30);
+            this.upDistancia.TabIndex = 14;
+            // 
+            // lbPreco
+            // 
+            this.lbPreco.AutoSize = true;
+            this.lbPreco.Location = new System.Drawing.Point(431, 143);
+            this.lbPreco.Name = "lbPreco";
+            this.lbPreco.Size = new System.Drawing.Size(69, 25);
+            this.lbPreco.TabIndex = 13;
+            this.lbPreco.Text = "Preço:";
+            // 
+            // lbDistancia
+            // 
+            this.lbDistancia.AutoSize = true;
+            this.lbDistancia.Location = new System.Drawing.Point(431, 63);
+            this.lbDistancia.Name = "lbDistancia";
+            this.lbDistancia.Size = new System.Drawing.Size(98, 25);
+            this.lbDistancia.TabIndex = 12;
+            this.lbDistancia.Text = "Distância:";
+            // 
+            // txtCidade2
+            // 
+            this.txtCidade2.Location = new System.Drawing.Point(122, 140);
+            this.txtCidade2.Name = "txtCidade2";
+            this.txtCidade2.Size = new System.Drawing.Size(260, 30);
+            this.txtCidade2.TabIndex = 11;
+            // 
+            // lbCidade2
+            // 
+            this.lbCidade2.AutoSize = true;
+            this.lbCidade2.Location = new System.Drawing.Point(19, 143);
+            this.lbCidade2.Name = "lbCidade2";
+            this.lbCidade2.Size = new System.Drawing.Size(97, 25);
+            this.lbCidade2.TabIndex = 10;
+            this.lbCidade2.Text = "Cidade 2:";
+            // 
             // txtCidade1
             // 
             this.txtCidade1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -414,67 +473,18 @@
             this.lbNome.TabIndex = 0;
             this.lbNome.Text = "Nome:";
             // 
-            // txtCidade2
-            // 
-            this.txtCidade2.Location = new System.Drawing.Point(122, 140);
-            this.txtCidade2.Name = "txtCidade2";
-            this.txtCidade2.Size = new System.Drawing.Size(260, 30);
-            this.txtCidade2.TabIndex = 11;
-            // 
-            // lbCidade2
-            // 
-            this.lbCidade2.AutoSize = true;
-            this.lbCidade2.Location = new System.Drawing.Point(19, 143);
-            this.lbCidade2.Name = "lbCidade2";
-            this.lbCidade2.Size = new System.Drawing.Size(97, 25);
-            this.lbCidade2.TabIndex = 10;
-            this.lbCidade2.Text = "Cidade 2:";
-            // 
-            // lbDistancia
-            // 
-            this.lbDistancia.AutoSize = true;
-            this.lbDistancia.Location = new System.Drawing.Point(431, 63);
-            this.lbDistancia.Name = "lbDistancia";
-            this.lbDistancia.Size = new System.Drawing.Size(98, 25);
-            this.lbDistancia.TabIndex = 12;
-            this.lbDistancia.Text = "Distância:";
-            // 
-            // lbPreco
-            // 
-            this.lbPreco.AutoSize = true;
-            this.lbPreco.Location = new System.Drawing.Point(431, 143);
-            this.lbPreco.Name = "lbPreco";
-            this.lbPreco.Size = new System.Drawing.Size(69, 25);
-            this.lbPreco.TabIndex = 13;
-            this.lbPreco.Text = "Preço:";
-            // 
-            // upDistancia
-            // 
-            this.upDistancia.Location = new System.Drawing.Point(535, 61);
-            this.upDistancia.Name = "upDistancia";
-            this.upDistancia.Size = new System.Drawing.Size(63, 30);
-            this.upDistancia.TabIndex = 14;
-            // 
-            // upPreco
-            // 
-            this.upPreco.Location = new System.Drawing.Point(535, 138);
-            this.upPreco.Name = "upPreco";
-            this.upPreco.Size = new System.Drawing.Size(63, 30);
-            this.upPreco.TabIndex = 15;
-            // 
-            // Form1
+            // FrmCaminho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 658);
             this.Controls.Add(this.tbApp);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FrmCaminho";
+            this.Text = "Caminhos de Trem";
+            this.ResizeEnd += new System.EventHandler(this.FrmCaminho_ResizeEnd);
             this.tbApp.ResumeLayout(false);
             this.tbMapa.ResumeLayout(false);
             this.tbMapa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upFim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.upInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapa)).EndInit();
             this.tbArvore.ResumeLayout(false);
             this.tbArvore.PerformLayout();
@@ -483,10 +493,10 @@
             this.gbRemoverCidade.PerformLayout();
             this.gbIncluirLigacoes.ResumeLayout(false);
             this.gbIncluirLigacoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upPreco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).EndInit();
             this.gbIncluirCidade.ResumeLayout(false);
             this.gbIncluirCidade.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.upPreco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,9 +510,7 @@
         private System.Windows.Forms.Label lbTituloArvore;
         private System.Windows.Forms.Panel pnlArvore;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.NumericUpDown upFim;
         private System.Windows.Forms.Label lbFinal;
-        private System.Windows.Forms.NumericUpDown upInicio;
         private System.Windows.Forms.Label lbInicio;
         private System.Windows.Forms.ListBox lsbCaminho;
         private System.Windows.Forms.Label lbResultado;
@@ -529,6 +537,9 @@
         private System.Windows.Forms.Label lbDistancia;
         private System.Windows.Forms.TextBox txtCidade2;
         private System.Windows.Forms.Label lbCidade2;
+        private System.Windows.Forms.TextBox txtFim;
+        private System.Windows.Forms.TextBox txtInicio;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 
