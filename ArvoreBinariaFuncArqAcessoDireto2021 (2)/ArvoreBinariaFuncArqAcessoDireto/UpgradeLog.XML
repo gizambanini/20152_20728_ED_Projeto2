@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ArvoreBinaria">
+</Property><Property Name="Solution File" Value="Z:\2008\toped\ArvoreBinaria\ArvoreBinaria.sln">
+</Property><Property Name="User Options File" Value="Z:\2008\toped\ArvoreBinaria\ArvoreBinaria.suo">
+</Property><Property Name="Date" Value="sexta-feira, 7 de novembro de 2008">
+</Property><Property Name="Time" Value="08:48">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ArvoreBinaria.sln" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria.sln">
+</Event><Event ErrorLevel="0" Project="" Source="ArvoreBinaria.suo" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria.suo">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\ArvoreBinaria.csproj" Description="Project file successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\ArvoreBinaria.csproj">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\ArvoreDeBusca.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\ArvoreDeBusca.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Form1.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Form1.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Form1.Designer.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\NoArvore.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\NoArvore.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Program.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Program.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Properties\AssemblyInfo.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Properties\Resources.Designer.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Properties\Settings.Designer.cs" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Properties\Settings.settings" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\Properties\Resources.resx" Description="File successfully backed up as Z:\2008\toped\ArvoreBinaria\Backup\ArvoreBinaria\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\ArvoreBinaria.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ArvoreBinaria" Source="ArvoreBinaria\ArvoreBinaria.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ArvoreBinaria.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ArvoreBinaria.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ArvoreBinaria" Source="ArvoreBinaria\ArvoreBinaria.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

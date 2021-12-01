@@ -1,0 +1,8 @@
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ResolveAssemblyReference.cache
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ArvoreBinaria.Form1.resources
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ArvoreBinaria.Properties.Resources.resources
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ArvoreBinaria.csproj.GenerateResource.Cache
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Release\ArvoreBinaria.exe
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Release\ArvoreBinaria.pdb
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ArvoreBinaria.exe
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Release\ArvoreBinaria.pdb

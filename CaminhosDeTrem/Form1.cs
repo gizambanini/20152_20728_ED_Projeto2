@@ -25,6 +25,10 @@ namespace CaminhosDeTrem
         private Font fnt = new Font("Arial", 10);
         private void FrmCaminho_Load(object sender, System.EventArgs e)
         {
+            StreamReader srCidade = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
+            txtInicio.Text = srCidade.ReadLine();
+            srCidade.Close(); 
+            /*
             // Dock the PictureBox to the form and set its background to white.
             pbMapa.Dock = DockStyle.Fill;
             pbMapa.BackColor = Color.White;
@@ -33,6 +37,7 @@ namespace CaminhosDeTrem
 
             // Add the PictureBox control to the Form.
             this.Controls.Add(pbMapa);
+            */
         }
 
         private void pbMapa_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
@@ -45,11 +50,28 @@ namespace CaminhosDeTrem
                 fnt, System.Drawing.Brushes.Blue, new Point(30, 30));
             // Draw a line in the PictureBox.
             Pen pen = new Pen(Color.Red);
-            g.DrawLine(pen, (float)(0.195 * pbMapa.Image.Width), (float)(0.151 * pbMapa.Image.Height), (float)(0.609 * pbMapa.Image.Width), (float)(0.609 * pbMapa.Image.Height));
+            g.DrawLine(pen, (float)(0.248 * pbMapa.Image.Width), (float)(0.192 * pbMapa.Image.Height), (float)(0.218 * pbMapa.Image.Width), (float)(0.796 * pbMapa.Image.Height));
         }
-        private void FrmCaminho_ResizeEnd(object sender, EventArgs e)
+
+        //VERIFICAR A ANCORAGEM DO MAPA
+        private void pbMapa_MouseClick(object sender, MouseEventArgs e)
         {
-pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
+            txtX.Text = string.Format("{0:N3}", ((float)e.X / (float)pbMapa.Image.Width ));
+            txtY.Text = string.Format("{0:N3}", ((float)e.Y / (float)pbMapa.Image.Height));
+        }
+
+        private void btnIncluirCidade_Click(object sender, EventArgs e)
+        {
+            if (txtX.Text == "")
+                MessageBox.Show("Selecione a cidade desejada no mapa primeiro");
+            
+            else if(txtNomeCidade.Text == "")
+                MessageBox.Show("Digite o nome da cidade a ser cadastrada primeiro");
+
+            else
+            {
+                
+            }
         }
     }
 }

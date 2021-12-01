@@ -1,0 +1,80 @@
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.GenerateResource.Cache
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+Z:\2008\toped\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+D:\chico\COTUCA\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.GenerateResource.Cache
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.read.1.tlog
+C:\Users\Chico\Documents\cotuca\Apostilas\TopED\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.write.1.tlog
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.read.1.tlog
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.read.1.tlog
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.write.1.tlog
+P:\Informatica\Materiais Didaticos\Matutino\6o Semestre\Topicos ED\2010\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.write.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.read.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.read.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.write.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinaria\ArvoreBinaria\obj\Debug\ResGen.write.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ResolveAssemblyReference.cache
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.read.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ResGen.read.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\GenerateResource-ResGen.write.1.tlog
+J:\Cotuca\2011\apostilas\topEd\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ResGen.write.1.tlog
+C:\Users\Chico\Documents\0cotuca\anos letivos\2013\1o Semestre\apostilas\topED\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+C:\Users\Chico\Documents\0cotuca\anos letivos\2013\1o Semestre\apostilas\topED\ArvoreBinariaFunc\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csprojAssemblyReference.cache
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.Form1.resources
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.GenerateResource.cache
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe.config
+D:\Chico\0Cotuca\APOSTILAS\EstDad\Arvores\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.CoreCompileInputs.cache
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe.config
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.AssemblyReference.cache
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.GenerateResource.cache
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.CoreCompileInputs.cache
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
+G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.frmArvore.resources
