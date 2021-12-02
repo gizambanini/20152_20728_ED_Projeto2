@@ -78,3 +78,12 @@ G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreB
 G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
 G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb
 G:\disciplinas\2021\2oSemestre\Estruturas de Dados 2\Classes\Arvores2020\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.frmArvore.resources
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe.config
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.exe
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\bin\Debug\ArvoreBinaria.pdb
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csprojAssemblyReference.cache
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.frmArvore.resources
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.Properties.Resources.resources
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.csproj.GenerateResource.cache
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.exe
+C:\Users\pedro\source\repos\ProjetoEDII\ArvoreBinariaFuncArqAcessoDireto2021 (2)\ArvoreBinariaFuncArqAcessoDireto\ArvoreBinaria\obj\Debug\ArvoreBinaria.pdb

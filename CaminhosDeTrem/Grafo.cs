@@ -1,4 +1,8 @@
-﻿using System;
+﻿//PROJETO II: GRAFOS - CAMINHOS DE TREM
+//GIOVANA MENDONÇA ZAMBANINI - 20728
+//PEDRO HENRIQUE PEREZ DIAS  - 20152
+
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -20,6 +24,22 @@ class Grafo
     public Grafo(DataGridView dgv)
     {
         this.dgv = dgv;
+        vertices = new Vertice[NUM_VERTICES];
+        adjMatrix = new int[NUM_VERTICES, NUM_VERTICES];
+        numVerts = 0;
+        nTree = 0;
+
+        for (int j = 0; j < NUM_VERTICES; j++)      // zera toda a matriz
+            for (int k = 0; k < NUM_VERTICES; k++)
+                adjMatrix[j, k] = infinity; // distância tão grande que não existe
+
+        percurso = new DistOriginal[NUM_VERTICES];
+    }
+
+    //Verificar dps
+    //FIZEMOS
+    public Grafo()
+    {
         vertices = new Vertice[NUM_VERTICES];
         adjMatrix = new int[NUM_VERTICES, NUM_VERTICES];
         numVerts = 0;
@@ -54,6 +74,24 @@ class Grafo
         adjMatrix[origem, destino] = peso;
     }
 
+    //FIZEMOS
+    public int IndiceVertice(string nome)
+    {
+        for (int j = 0; j < NUM_VERTICES; j++)
+            if (vertices[j].Rotulo == nome)
+                return j;
+        return -1;
+    }
+    
+    public int PesoAresta(int origem, int destino)
+    {
+        for (int j = 0; j < NUM_VERTICES; j++)
+            for (int k = 0; k < NUM_VERTICES; k++)
+                if (j == origem && k == destino)
+                    return adjMatrix[j, k];
+        return -1;
+    }
+    //
     public void ExibirVertice(int v)
     {
         Console.Write(vertices[v].Rotulo + " ");
@@ -403,6 +441,7 @@ class Grafo
             resultado += " --> " + vertices[finalDoPercurso].Rotulo;
         return resultado;
     }
+
 
 
 }

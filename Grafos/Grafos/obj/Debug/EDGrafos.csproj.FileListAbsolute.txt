@@ -29,3 +29,12 @@ G:\Chico\0Cotuca\APOSTILAS\EstDad\Grafos\obj\Debug\EDGrafos.csproj.GenerateResou
 G:\Chico\0Cotuca\APOSTILAS\EstDad\Grafos\obj\Debug\EDGrafos.csproj.CoreCompileInputs.cache
 G:\Chico\0Cotuca\APOSTILAS\EstDad\Grafos\obj\Debug\EDGrafos.exe
 G:\Chico\0Cotuca\APOSTILAS\EstDad\Grafos\obj\Debug\EDGrafos.pdb
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\bin\Debug\EDGrafos.exe.config
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\bin\Debug\EDGrafos.exe
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\bin\Debug\EDGrafos.pdb
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.csprojAssemblyReference.cache
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.frmGrafos.resources
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.Properties.Resources.resources
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.csproj.GenerateResource.cache
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.exe
+C:\Users\pedro\source\repos\ProjetoEDII\Grafos\Grafos\obj\Debug\EDGrafos.pdb

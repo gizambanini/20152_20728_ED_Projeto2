@@ -1,4 +1,8 @@
-﻿using System;
+﻿//PROJETO II: GRAFOS - CAMINHOS DE TREM
+//GIOVANA MENDONÇA ZAMBANINI - 20728
+//PEDRO HENRIQUE PEREZ DIAS  - 20152
+
+using System;
 class Vertice
 {
     private bool foiVisitado;

@@ -202,6 +202,7 @@
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtFim
             // 
@@ -258,9 +259,6 @@
             // 
             // pbMapa
             // 
-            this.pbMapa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMapa.ImageLocation = "C:\\Users\\pedro\\source\\repos\\ProjetoEDII\\CaminhosDeTrem\\mapaEspanhaPortugal.jpg";
             this.pbMapa.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMapa.InitialImage")));
             this.pbMapa.Location = new System.Drawing.Point(457, 27);
@@ -294,6 +292,7 @@
             this.btnMostrar.TabIndex = 2;
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
             // lbTituloArvore
             // 
@@ -471,6 +470,7 @@
             this.btnIncluirLig.TabIndex = 7;
             this.btnIncluirLig.Text = "Incluir";
             this.btnIncluirLig.UseVisualStyleBackColor = true;
+            this.btnIncluirLig.Click += new System.EventHandler(this.btnIncluirLig_Click);
             // 
             // FrmCaminho
             // 
