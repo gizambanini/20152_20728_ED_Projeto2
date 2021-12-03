@@ -429,11 +429,39 @@ public int Largura()
         
         }
 
+    public void LerVetorDeRegistros(Dado[] vetRegistros)
+    {
+        raiz = null;
+        //Dado dado = new Dado();
+        Particionar(0, vetRegistros.Length - 1, ref raiz);
+        
+        void Particionar(long inicio, long fim, ref NoArvore<Dado> atual)
+        {
+            if (inicio <= fim)
+            {
+                long meio = (inicio + fim) / 2;
+
+                Dado dado = new Dado();       // cria um objeto para armazenar os dado visitado atualmente
+                dado = vetRegistros[meio];    // armazena nesse objeto o dado cadastrado no vetor
+                this.Incluir(dado);           // inclui o dado na árvore
+                atual = new NoArvore<Dado>(dado, meio);
+                var novoEsq = atual.Esq;
+                Particionar(inicio, meio - 1, ref novoEsq);   // Particiona à esquerda 
+                atual.Esq = novoEsq;
+                var novoDir = atual.Dir;
+                Particionar(meio + 1, fim, ref novoDir);        // Particiona à direita  
+                atual.Dir = novoDir;
+            }
+        }
+
+    }
+
     public void GravarArquivoDeRegistros(string nomeArquivo)
     {
         var destino = new FileStream(nomeArquivo, FileMode.Create);
         var arquivo = new StreamWriter(destino);
         GravarInOrdem(raiz);
+        
         arquivo.Close();
 
         void GravarInOrdem(NoArvore<Dado> r)
@@ -445,6 +473,7 @@ public int Largura()
                 r.Info.GravarRegistro(arquivo);
 
                 GravarInOrdem(r.Dir);
+                
             }
         }
     }
@@ -534,7 +563,7 @@ public int Largura()
                 {
                     var temp = atual.Dir;
                     bool result = Excluir(ref temp);
-                    atual.Esq = temp;
+                    atual.Dir = temp;
                     return result;
             }
             else

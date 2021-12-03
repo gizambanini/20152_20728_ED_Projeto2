@@ -15,17 +15,18 @@ using System.IO;
 
 namespace CaminhosDeTrem
 {
-    
+
     public partial class FrmCaminho : Form
     {
         ArvoreDeBusca<Cidade> arv = new ArvoreDeBusca<Cidade>();
-        
-        Cidade[] vetCidade = new Cidade[System.IO.File.ReadAllLines(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt").Length];
-        
+
+        Cidade [] vetCidade  = new Cidade [System.IO.File.ReadAllLines(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt").Length];
+        Caminho[] vetCaminho = new Caminho[System.IO.File.ReadAllLines(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\GrafoTremEspanhaPortugal.txt").Length];
+
         double x1, y1, x2, y2;
         public FrmCaminho()
         {
-            
+
             InitializeComponent();
         }
 
@@ -34,6 +35,8 @@ namespace CaminhosDeTrem
         {
             StreamReader srCidade = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
             int posicoesVetCidade = 0;
+
+            //Criação do vetor de cidades com base no arquivo texto
             while (!srCidade.EndOfStream)
             {
                 string regCidade = srCidade.ReadLine();
@@ -42,60 +45,62 @@ namespace CaminhosDeTrem
                 posicoesVetCidade++;
             }
 
-            for (int i = 0; i < vetCidade.Length; i++)
-                arv.IncluirNovoRegistro(vetCidade[i]);
-        }
-
-        private void pbMapa_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-            // Create a local version of the graphics object for the PictureBox.
-            Graphics g = e.Graphics;
-
-            // Draw a string on the PictureBox.
-            g.DrawString("This is a diagonal line drawn on the control",
-                fnt, System.Drawing.Brushes.Blue, new Point(30, 30));
-            // Draw a line in the PictureBox.
-            Pen pen = new Pen(Color.Red);
-            //g.DrawLine(pen, (float)(0.195 * pbMapa.Image.Width), (float)(0.151 * pbMapa.Image.Height), (float)(0.609 * pbMapa.Image.Width), (float)(0.609 * pbMapa.Image.Height));
+            //Lê o vetor e armazena osvalores de forma balanceada na árvore
+            arv.LerVetorDeRegistros(vetCidade);
         }
 
         //VERIFICAR A ANCORAGEM DO MAPA
         private void pbMapa_MouseClick(object sender, MouseEventArgs e)
         {
-            txtX.Text = string.Format("{0:N3}", ((float)e.X / (float)pbMapa.Image.Width ));
+            txtX.Text = string.Format("{0:N3}", ((float)e.X / (float)pbMapa.Image.Width));
             txtY.Text = string.Format("{0:N3}", ((float)e.Y / (float)pbMapa.Image.Height));
         }
 
         private void btnIncluirCidade_Click(object sender, EventArgs e)
         {
+            //Como os dois campos (txtX e txtY) sao atualizados ao mesmo tempo, basta verificar se um deles esta vazio
             if (txtX.Text == "")
                 MessageBox.Show("Selecione a cidade desejada no mapa primeiro");
-            
-            else if(txtNomeCidade.Text == "")
+
+            else if (txtNomeCidade.Text == "")
                 MessageBox.Show("Digite o nome da cidade a ser cadastrada primeiro");
 
             else
             {
-                
+                //Incluir a cidade aqui
+                Cidade cidInclusao = new Cidade(txtNomeCidade.Text, float.Parse(txtX.Text), float.Parse(txtY.Text));
+                try
+                {
+                    //ALTERAR INDICE P QTD NOS ARVORE
+                    arv.Incluir(cidInclusao);
+                    MessageBox.Show("Cidade cadastrada com sucesso");
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message);
+                }
+
             }
         }
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             arv.DesenharArvore(true, arv.Raiz, (int)pnlArvore.Width / 2, 0,
-                  Math.PI / 2, Math.PI / 2.5, 300, pnlArvore.CreateGraphics());
+                  Math.PI / 2, Math.PI / 2.2, 300, pnlArvore.CreateGraphics());
         }
+
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Criar classe de conexoes
             //Criar vertices e arestas a partir da arvore e do arquivo de conexoes
-            Grafo oGrafo = new Grafo();
+            Grafo oGrafo = new Grafo(dgvGrafo);
 
-            for (int i = 0; i < vetCidade.Length; i++)
-                oGrafo.NovoVertice(vetCidade[i].Nome);
-                
+            //Cria os vertices do grafo a partir das cidades da arvore
+            CriaVertices(arv.Raiz, ref oGrafo);
             
+            /*
             lsbCaminho.Items.Clear();
             lsbCaminho.Items.Add("");
             lsbCaminho.Items.Add("Menores caminhos:");
@@ -106,7 +111,19 @@ namespace CaminhosDeTrem
             lsbCaminho.Items.Add(caminhoFinal);
             lsbCaminho.Items.Add("");
             string[] cidades = caminhoFinal.Split(' ');
-            MostrarCaminho(cidades);
+            MostrarCaminho(cidades);*/
+        }
+
+        private void CriaVertices(NoArvore<Cidade> raiz, ref Grafo gr)
+        {
+            if (raiz != null)
+            {
+                if (raiz.Esq != null)
+                    CriaVertices(raiz.Esq, ref gr);
+                if (raiz.Dir != null)
+                    CriaVertices(raiz.Esq, ref gr);
+                gr.NovoVertice(raiz.Info.Nome, raiz.Indice);
+            }
         }
 
         public void MostrarCaminho(string[] cidVisitadas)
@@ -136,7 +153,55 @@ namespace CaminhosDeTrem
 
         private void btnIncluirLig_Click(object sender, EventArgs e)
         {
-            
+            if(txtCidade1.Text != "" && txtCidade2.Text != "" && upDistancia.Value != 0 && upPreco.Value != 0)
+            {
+                Cidade cid1 = new Cidade();
+                cid1.Nome = txtCidade1.Text;
+                Cidade cid2 = new Cidade();
+                cid2.Nome = txtCidade2.Text;
+                if (!arv.Existe(cid1))
+                    MessageBox.Show("A cidade 1 especificada não está cadastrada");
+
+                else if (!arv.Existe(cid2))
+                    MessageBox.Show("A cidade 2 especificada não está cadastrada");
+
+                else
+                {
+                    //incluir a ligação aqui
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Preencha os campos corretamente");
+            }
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (txtNomeRem.Text == "")
+            {
+                MessageBox.Show("Preencha os campos corretamente");
+            }
+
+            else
+            {
+                Cidade cidRemover = new Cidade();
+                cidRemover.Nome = txtNomeRem.Text;
+                if (!arv.Existe(cidRemover))
+                    MessageBox.Show("A cidade especificada não está cadastrada");
+                else
+                {
+                    //Excluir a cidade aqui
+                    arv.Excluir(cidRemover);
+                    MessageBox.Show("Cidade removida com sucesso");
+                }
+            }
+        }
+
+        private void FrmCaminho_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            arv.GravarArquivoDeRegistros(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
         }
     }
 }

@@ -66,6 +66,9 @@
             this.txtCidade1 = new System.Windows.Forms.TextBox();
             this.lbCidade1 = new System.Windows.Forms.Label();
             this.btnIncluirLig = new System.Windows.Forms.Button();
+            this.tbDataGridView = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvGrafo = new System.Windows.Forms.DataGridView();
             this.tbApp.SuspendLayout();
             this.tbMapa.SuspendLayout();
             this.gbIncCidade.SuspendLayout();
@@ -76,6 +79,8 @@
             this.gbIncluirLigacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upPreco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).BeginInit();
+            this.tbDataGridView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrafo)).BeginInit();
             this.SuspendLayout();
             // 
             // tbApp
@@ -86,6 +91,7 @@
             this.tbApp.Controls.Add(this.tbMapa);
             this.tbApp.Controls.Add(this.tbArvore);
             this.tbApp.Controls.Add(this.tbOperacoes);
+            this.tbApp.Controls.Add(this.tbDataGridView);
             this.tbApp.Location = new System.Drawing.Point(2, 1);
             this.tbApp.Name = "tbApp";
             this.tbApp.SelectedIndex = 0;
@@ -222,9 +228,9 @@
             // 
             this.lsbCaminho.FormattingEnabled = true;
             this.lsbCaminho.ItemHeight = 16;
-            this.lsbCaminho.Location = new System.Drawing.Point(33, 185);
+            this.lsbCaminho.Location = new System.Drawing.Point(6, 185);
             this.lsbCaminho.Name = "lsbCaminho";
-            this.lsbCaminho.Size = new System.Drawing.Size(302, 148);
+            this.lsbCaminho.Size = new System.Drawing.Size(439, 164);
             this.lsbCaminho.TabIndex = 6;
             // 
             // lbResultado
@@ -267,7 +273,6 @@
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbMapa.TabIndex = 0;
             this.pbMapa.TabStop = false;
-            this.pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
             this.pbMapa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbMapa_MouseClick);
             // 
             // tbArvore
@@ -296,9 +301,6 @@
             // 
             // lbTituloArvore
             // 
-            this.lbTituloArvore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTituloArvore.AutoSize = true;
             this.lbTituloArvore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTituloArvore.Location = new System.Drawing.Point(374, 25);
@@ -353,6 +355,7 @@
             this.btnRemover.TabIndex = 4;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // txtNomeRem
             // 
@@ -372,9 +375,6 @@
             // 
             // gbIncluirLigacoes
             // 
-            this.gbIncluirLigacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbIncluirLigacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.gbIncluirLigacoes.Controls.Add(this.upPreco);
             this.gbIncluirLigacoes.Controls.Add(this.upDistancia);
@@ -443,8 +443,6 @@
             // 
             // txtCidade1
             // 
-            this.txtCidade1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCidade1.Location = new System.Drawing.Point(122, 60);
             this.txtCidade1.Name = "txtCidade1";
             this.txtCidade1.Size = new System.Drawing.Size(260, 30);
@@ -461,9 +459,6 @@
             // 
             // btnIncluirLig
             // 
-            this.btnIncluirLig.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIncluirLig.Location = new System.Drawing.Point(866, 75);
             this.btnIncluirLig.Name = "btnIncluirLig";
             this.btnIncluirLig.Size = new System.Drawing.Size(153, 59);
@@ -471,6 +466,36 @@
             this.btnIncluirLig.Text = "Incluir";
             this.btnIncluirLig.UseVisualStyleBackColor = true;
             this.btnIncluirLig.Click += new System.EventHandler(this.btnIncluirLig_Click);
+            // 
+            // tbDataGridView
+            // 
+            this.tbDataGridView.Controls.Add(this.dgvGrafo);
+            this.tbDataGridView.Controls.Add(this.button1);
+            this.tbDataGridView.Location = new System.Drawing.Point(4, 25);
+            this.tbDataGridView.Name = "tbDataGridView";
+            this.tbDataGridView.Size = new System.Drawing.Size(1180, 629);
+            this.tbDataGridView.TabIndex = 3;
+            this.tbDataGridView.Text = "Tabela";
+            this.tbDataGridView.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 53);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Mostrar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgvGrafo
+            // 
+            this.dgvGrafo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrafo.Location = new System.Drawing.Point(7, 143);
+            this.dgvGrafo.Name = "dgvGrafo";
+            this.dgvGrafo.RowHeadersWidth = 51;
+            this.dgvGrafo.RowTemplate.Height = 24;
+            this.dgvGrafo.Size = new System.Drawing.Size(1162, 480);
+            this.dgvGrafo.TabIndex = 1;
             // 
             // FrmCaminho
             // 
@@ -480,6 +505,7 @@
             this.Controls.Add(this.tbApp);
             this.Name = "FrmCaminho";
             this.Text = "Caminhos de Trem";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCaminho_FormClosing);
             this.Load += new System.EventHandler(this.FrmCaminho_Load);
             this.tbApp.ResumeLayout(false);
             this.tbMapa.ResumeLayout(false);
@@ -496,6 +522,8 @@
             this.gbIncluirLigacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upPreco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDistancia)).EndInit();
+            this.tbDataGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrafo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -539,6 +567,9 @@
         private System.Windows.Forms.TextBox txtNomeCidade;
         private System.Windows.Forms.Label lbNomeCidade;
         private System.Windows.Forms.Button btnIncluirCidade;
+        private System.Windows.Forms.TabPage tbDataGridView;
+        private System.Windows.Forms.DataGridView dgvGrafo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

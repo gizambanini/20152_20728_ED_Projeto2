@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 class Grafo
 {
-    private const int NUM_VERTICES = 20;
+    private const int NUM_VERTICES = 200;
     private Vertice[] vertices;
     private int[,] adjMatrix;
     int numVerts;
@@ -75,6 +75,23 @@ class Grafo
     }
 
     //FIZEMOS
+    public void NovoVertice(string label, long posic)
+    {
+        vertices[posic] = new Vertice(label);
+        numVerts++;
+        if (dgv != null)  // se foi passado como parâmetro um dataGridView para exibição
+        {              // se realiza o seu ajuste para a quantidade de vértices
+            dgv.RowCount = numVerts + 1;
+            dgv.ColumnCount = numVerts + 1;
+            dgv.Columns[numVerts].Width = 45;
+        }
+    }
+
+    public Vertice[] Vetor()
+    {
+        return vertices;
+    }
+
     public int IndiceVertice(string nome)
     {
         for (int j = 0; j < NUM_VERTICES; j++)

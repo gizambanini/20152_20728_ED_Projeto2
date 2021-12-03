@@ -66,8 +66,9 @@ class Cidade: IComparable<Cidade>, IRegistro
         if (arquivo != null)
         {
             arquivo.Write(Nome);
-            arquivo.Write(CoordX);
-            arquivo.WriteLine(CoordY);
+            arquivo.Write(string.Format("{0:N3}", CoordX));     //Grava o número com 3 casas decimais
+            arquivo.Write(" ");
+            arquivo.WriteLine(string.Format("{0:N3}", CoordY)); //Grava o número com 3 casas decimais
         }
     }
 
