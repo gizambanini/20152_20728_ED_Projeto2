@@ -16,7 +16,7 @@ class Cidade: IComparable<Cidade>, IRegistro
     private float coordX, coordY;
 
 
-    public string Nome { get => nome; set => nome = value.PadRight(17, ' ').Substring(0, 17); }
+    public string Nome { get => nome; set => nome = value; }
     public float CoordX { get => coordX; set => coordX = value; }
     public float CoordY { get => coordY; set => coordY = value; }
 
@@ -51,9 +51,9 @@ class Cidade: IComparable<Cidade>, IRegistro
             {
                 string registro = arquivo.ReadLine();
                 int x = registro.Length;
-                Nome = registro.Substring(0, 16);
-                CoordX = float.Parse(registro.Substring(16, 5));
-                CoordY = float.Parse(registro.Substring(22, 5));
+                Nome = registro.Substring(0, 15);
+                CoordX = float.Parse(registro.Substring(15, 5));
+                CoordY = float.Parse(registro.Substring(21, 5));
             }
             catch (Exception e)
             {

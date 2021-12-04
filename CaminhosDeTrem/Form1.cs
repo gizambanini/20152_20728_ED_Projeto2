@@ -35,16 +35,25 @@ namespace CaminhosDeTrem
         {
             StreamReader srCidade = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
             int posicoesVetCidade = 0;
+            StreamReader srCaminho = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\GrafoTremEspanhaPortugal.txt");
+            
 
             //Criação do vetor de cidades com base no arquivo texto
             while (!srCidade.EndOfStream)
             {
                 string regCidade = srCidade.ReadLine();
-                Cidade cid = new Cidade(regCidade.Substring(0, 16), float.Parse(regCidade.Substring(16, 5)), float.Parse(regCidade.Substring(22, 5)));
+                Cidade cid = new Cidade(regCidade.Substring(0, 15), float.Parse(regCidade.Substring(15, 5)), float.Parse(regCidade.Substring(21, 5)));
                 vetCidade[posicoesVetCidade] = cid;
                 posicoesVetCidade++;
             }
 
+            for (int i = 0; i < vetCaminho.Length; i++)
+            {
+                Caminho cam = new Caminho();
+                cam.LerRegistro(srCaminho);
+                vetCaminho[i] = cam;
+            }
+                
             //Lê o vetor e armazena osvalores de forma balanceada na árvore
             arv.LerVetorDeRegistros(vetCidade);
         }
@@ -87,6 +96,7 @@ namespace CaminhosDeTrem
         {
             arv.DesenharArvore(true, arv.Raiz, (int)pnlArvore.Width / 2, 0,
                   Math.PI / 2, Math.PI / 2.2, 300, pnlArvore.CreateGraphics());
+
         }
 
 
@@ -95,23 +105,36 @@ namespace CaminhosDeTrem
         {
             //Criar classe de conexoes
             //Criar vertices e arestas a partir da arvore e do arquivo de conexoes
-            Grafo oGrafo = new Grafo(dgvGrafo);
+            Grafo oGrafo = new Grafo(dgvGrafo, vetCidade.Length);
 
             //Cria os vertices do grafo a partir das cidades da arvore
             CriaVertices(arv.Raiz, ref oGrafo);
-            
-            /*
-            lsbCaminho.Items.Clear();
-            lsbCaminho.Items.Add("");
-            lsbCaminho.Items.Add("Menores caminhos:");
-            lsbCaminho.Items.Add("");
-            int ori = int.Parse(txtInicio.Text);
-            int des = int.Parse(txtFim.Text);
-            string caminhoFinal = oGrafo.Caminho(ori, des, lsbCaminho);
-            lsbCaminho.Items.Add(caminhoFinal);
-            lsbCaminho.Items.Add("");
-            string[] cidades = caminhoFinal.Split(' ');
-            MostrarCaminho(cidades);*/
+            CriaArestas(vetCaminho, ref oGrafo);
+            oGrafo.ExibirAdjacencias();
+            int ori = oGrafo.IndiceVertice(txtInicio.Text);
+            int des = oGrafo.IndiceVertice(txtFim.Text);
+            if (ori == -1)
+            {
+                MessageBox.Show("A cidade " + txtInicio.Text + " não está cadastrada");
+            }
+            else if (des == -1)
+            {
+                MessageBox.Show("A cidade " + txtFim.Text + " não está cadastrada");
+            }
+            else
+            {
+                lsbCaminho.Items.Clear();
+                lsbCaminho.Items.Add("");
+                lsbCaminho.Items.Add("Menores caminhos:");
+                lsbCaminho.Items.Add("");
+                string caminhoFinal = oGrafo.Caminho(ori, des, lsbCaminho);
+                lsbCaminho.Items.Add(caminhoFinal);
+                lsbCaminho.Items.Add("");
+                string[] cidades = caminhoFinal.Split(' ');
+                
+                if(caminhoFinal != "Não há caminho")
+                    MostrarCaminho(cidades, oGrafo);
+            }
         }
 
         private void CriaVertices(NoArvore<Cidade> raiz, ref Grafo gr)
@@ -121,32 +144,37 @@ namespace CaminhosDeTrem
                 if (raiz.Esq != null)
                     CriaVertices(raiz.Esq, ref gr);
                 if (raiz.Dir != null)
-                    CriaVertices(raiz.Esq, ref gr);
-                gr.NovoVertice(raiz.Info.Nome, raiz.Indice);
+                    CriaVertices(raiz.Dir, ref gr);
+                gr.NovoVertice(raiz.Info.Nome.TrimEnd(), raiz.Indice);
             }
         }
 
-        public void MostrarCaminho(string[] cidVisitadas)
+        private void CriaArestas(Caminho[] vet, ref Grafo gr)
         {
-            for (int i = 0; i <= cidVisitadas.Length; i = i + 2)
+            for (int i = 0; i < vetCaminho.Length; i++)
+                gr.NovaAresta(gr.IndiceVertice(vetCaminho[i].Inicio.TrimEnd()), gr.IndiceVertice(vetCaminho[i].Fim.TrimEnd()), vetCaminho[i].Distancia);
+        }
+
+        private void MostrarCaminho(string[] cidVisitadas, Grafo gr)
+        {
+            //Ta dando erro com cidades como: A Coruna, Santiago de C.
+            //Por causa dos espaços no meio do nome
+            //
+            pbMapa.Refresh();
+            Graphics g = pbMapa.CreateGraphics();
+            Pen pen = new Pen(Color.Red);
+            for (int i = 0; i < cidVisitadas.Length; i = i + 2)
             {
-                MessageBox.Show(cidVisitadas[i]);
+                //Tentar corrigir verificando as posicoes seguintes do vetor 
+                int f = i;
+                if (i + 2 < cidVisitadas.Length)
+                    f = i + 2;
+                
+                //MessageBox.Show(cidVisitadas[i]);
+                Cidade inicio = vetCidade[gr.IndiceVertice(cidVisitadas[i])];
+                Cidade fim = vetCidade[gr.IndiceVertice(cidVisitadas[f])];
                 //COMPARAR cidVisitadas[i] com as cidades no vetor de cidades
-                switch (cidVisitadas[i])
-                {
-                    case "A": x1 = 0.195; y1 = 0.151; x2 = 0.609; y2 = 0.609;
-                        Graphics g = pbMapa.CreateGraphics();
-                        Pen pen = new Pen(Color.Red);
-                        g.DrawLine(pen, (float)(x1 * pbMapa.Image.Width), (float)(y1 * pbMapa.Image.Height), (float)(x2 * pbMapa.Image.Width), (float)(y2 * pbMapa.Image.Height));
-                        
-                        break;
-                    case "B": x1 = 0.609; y1 = 0.609; x2 = 0.697; y2 = 0.675;
-                        Graphics g1 = pbMapa.CreateGraphics();
-                        Pen can = new Pen(Color.Red);
-                        g1.DrawLine(can, (float)(x1 * pbMapa.Image.Width), (float)(y1 * pbMapa.Image.Height), (float)(x2 * pbMapa.Image.Width), (float)(y2 * pbMapa.Image.Height));
-                        
-                        break;
-                }
+                g.DrawLine(pen, (float)(inicio.CoordX * pbMapa.Image.Width), (float)(inicio.CoordY * pbMapa.Image.Height), (float)(fim.CoordX * pbMapa.Image.Width), (float)(fim.CoordY * pbMapa.Image.Height));
 
             }
         }

@@ -1,53 +1,53 @@
-A Coruna         0.190 0.150
-Albacete         0.600 0.600
-Alicante         0.690 0.670
-Barcelona        0.860 0.360
-Bilbao           0.540 0.160
-Braga            0.190 0.340
-Burgos           0.490 0.260
-Caceres          0.320 0.560
-Cadiz            0.320 0.850
-Cartagena        0.660 0.750
-Castelo Branco   0.250 0.520
-Coimbra          0.190 0.480
-Cordoba          0.420 0.720
-El Ejido         0.550 0.830
-Gijon            0.360 0.130
-Girona           0.900 0.290
-Granada          0.490 0.790
-Guadalajara      0.520 0.440
-Guarda           0.260 0.450
-Huelva           0.280 0.780
-Jaen             0.480 0.730
-Leon             0.370 0.230
-Lisboa           0.140 0.630
-Lleida           0.760 0.330
-Logrono          0.570 0.240
-Lorca            0.610 0.740
-Loule            0.210 0.790
-Lugo             0.240 0.190
-Madrid           0.490 0.460
-Malaga           0.440 0.830
-Mataro           0.880 0.350
-Montpellier      0.970 0.120
-Murcia           0.650 0.710
-Ourense          0.220 0.260
-Oviedo           0.350 0.150
-Pau              0.700 0.150
-Perpignan        0.910 0.220
-Pombal           0.170 0.510
-Ponferrada       0.310 0.240
-Porto            0.180 0.380
-Salamanca        0.360 0.400
-San Sebastian    0.600 0.150
-Santander        0.480 0.140
-Santiago de C.   0.180 0.200
-Sevilha          0.340 0.770
-Tarragona        0.800 0.390
-Toledo           0.470 0.520
-Toulouse         0.810 0.120
-Valencia         0.700 0.560
-Valladolid       0.420 0.330
-Vigo             0.170 0.270
-Viseu            0.220 0.430
-Zaragoza         0.670 0.330
+A Coruna       0.190 0.150
+Albacete       0.600 0.600
+Alicante       0.690 0.670
+Barcelona      0.860 0.360
+Bilbao         0.540 0.160
+Braga          0.190 0.340
+Burgos         0.490 0.260
+Caceres        0.320 0.560
+Cadiz          0.320 0.850
+Cartagena      0.660 0.750
+Castelo Branco 0.250 0.520
+Coimbra        0.190 0.480
+Cordoba        0.420 0.720
+El Ejido       0.550 0.830
+Gijon          0.360 0.130
+Girona         0.900 0.290
+Granada        0.490 0.790
+Guadalajara    0.520 0.440
+Guarda         0.260 0.450
+Huelva         0.280 0.780
+Jaen           0.480 0.730
+Leon           0.370 0.230
+Lisboa         0.140 0.630
+Lleida         0.760 0.330
+Logrono        0.570 0.240
+Lorca          0.610 0.740
+Loule          0.210 0.790
+Lugo           0.240 0.190
+Madrid         0.490 0.460
+Malaga         0.440 0.830
+Mataro         0.880 0.350
+Montpellier    0.970 0.120
+Murcia         0.650 0.710
+Ourense        0.220 0.260
+Oviedo         0.350 0.150
+Pau            0.700 0.150
+Perpignan      0.910 0.220
+Pombal         0.170 0.510
+Ponferrada     0.310 0.240
+Porto          0.180 0.380
+Salamanca      0.360 0.400
+San Sebastian  0.600 0.150
+Santander      0.480 0.140
+Santiago de C. 0.180 0.200
+Sevilha        0.340 0.770
+Tarragona      0.800 0.390
+Toledo         0.470 0.520
+Toulouse       0.810 0.120
+Valencia       0.700 0.560
+Valladolid     0.420 0.330
+Vigo           0.170 0.270
+Viseu          0.220 0.430
+Zaragoza       0.670 0.330

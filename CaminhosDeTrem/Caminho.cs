@@ -39,16 +39,16 @@ class Caminho
         return Inicio;
     }
 
-    public void LerRegistro(StreamReader arquivo, long qualRegistro)
+    public void LerRegistro(StreamReader arquivo)
     {
         if (arquivo != null)
             try
             {
                 string registro = arquivo.ReadLine();
-                Inicio    = registro.Substring(0, 14);
-                Fim       = registro.Substring(15, 14);
+                Inicio    = registro.Substring(0, 15);
+                Fim       = registro.Substring(15, 15);
                 Distancia = int.Parse(registro.Substring(31, 3));
-                Passagem  = int.Parse(registro.Substring(34, 3));
+                Passagem  = int.Parse(registro.Substring(35, 3));
             }
             catch (Exception e)
             {

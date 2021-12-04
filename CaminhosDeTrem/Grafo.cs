@@ -36,8 +36,25 @@ class Grafo
         percurso = new DistOriginal[NUM_VERTICES];
     }
 
+
+
     //Verificar dps
     //FIZEMOS
+    public Grafo(DataGridView dgv, int max)
+    {
+        this.dgv = dgv;
+        vertices = new Vertice[max];
+        adjMatrix = new int[max, max];
+        numVerts = 0;
+        nTree = 0;
+
+        for (int j = 0; j < max; j++)      // zera toda a matriz
+            for (int k = 0; k < max; k++)
+                adjMatrix[j, k] = infinity; // distância tão grande que não existe
+
+        percurso = new DistOriginal[max];
+    }
+
     public Grafo()
     {
         vertices = new Vertice[NUM_VERTICES];
@@ -92,9 +109,13 @@ class Grafo
         return vertices;
     }
 
+    //Ta dando erro p causa das diferencas entre os arquivos
+    //"Madrid    "
+    //vs.
+    //"Madrid   "
     public int IndiceVertice(string nome)
     {
-        for (int j = 0; j < NUM_VERTICES; j++)
+        for (int j = 0; j < vertices.Length; j++)
             if (vertices[j].Rotulo == nome)
                 return j;
         return -1;
@@ -102,11 +123,7 @@ class Grafo
     
     public int PesoAresta(int origem, int destino)
     {
-        for (int j = 0; j < NUM_VERTICES; j++)
-            for (int k = 0; k < NUM_VERTICES; k++)
-                if (j == origem && k == destino)
-                    return adjMatrix[j, k];
-        return -1;
+        return adjMatrix[origem, destino];
     }
     //
     public void ExibirVertice(int v)
