@@ -10,7 +10,6 @@ Cadiz          0.320 0.850
 Cartagena      0.660 0.750
 Castelo Branco 0.250 0.520
 Coimbra        0.190 0.480
-Cordoba        0.420 0.720
 El Ejido       0.550 0.830
 Gijon          0.360 0.130
 Girona         0.900 0.290

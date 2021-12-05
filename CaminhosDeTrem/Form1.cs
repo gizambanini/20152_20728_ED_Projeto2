@@ -19,7 +19,6 @@ namespace CaminhosDeTrem
     public partial class FrmCaminho : Form
     {
         //Se precisar, arrumar o list
-
         ArvoreDeBusca<Cidade> arv = new ArvoreDeBusca<Cidade>();
 
         Cidade [] vetCidade  = new Cidade [System.IO.File.ReadAllLines("..\\..\\Cidades.txt").Length];
@@ -163,7 +162,11 @@ namespace CaminhosDeTrem
         private void CriaArestas()
         {
             for (int i = 0; i < listaCaminho.Count; i++)
+            {
                 oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Inicio.TrimEnd()), oGrafo.IndiceVertice(listaCaminho[i].Fim.TrimEnd()), listaCaminho[i].Distancia);
+                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Fim.TrimEnd()), oGrafo.IndiceVertice(listaCaminho[i].Inicio.TrimEnd()), listaCaminho[i].Distancia); //Possibilitar volta do caminhos
+            }
+                
         }
 
         private void CaminhoInfo(string[] cidVisitadas, ListBox ls)
@@ -192,7 +195,8 @@ namespace CaminhosDeTrem
                 
 
                     for (int posLista = 0; posLista < listaCaminho.Count; posLista++)
-                        if (listaCaminho[posLista].Inicio.TrimEnd() == inicio.Nome && listaCaminho[posLista].Fim.TrimEnd() == fim.Nome && listaCaminho[posLista].Distancia == distParcial)
+                        if (listaCaminho[posLista].Inicio.TrimEnd() == inicio.Nome && listaCaminho[posLista].Fim.TrimEnd() == fim.Nome && listaCaminho[posLista].Distancia == distParcial 
+                            || listaCaminho[posLista].Inicio.TrimEnd() == fim.Nome && listaCaminho[posLista].Fim.TrimEnd() == inicio.Nome && listaCaminho[posLista].Distancia == distParcial)
                             preco += listaCaminho[posLista].Passagem;
                 }
                 
@@ -238,6 +242,7 @@ namespace CaminhosDeTrem
                     Caminho cam = new Caminho(txtCidade1.Text, txtCidade2.Text, Decimal.ToInt32(upDistancia.Value), Decimal.ToInt32(upPreco.Value));
                     listaCaminho.Add(cam);
                     oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade1.Text), oGrafo.IndiceVertice(txtCidade2.Text), Decimal.ToInt32(upDistancia.Value));
+                    oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade2.Text), oGrafo.IndiceVertice(txtCidade1.Text), Decimal.ToInt32(upDistancia.Value));
                     MessageBox.Show("Caminho incluído com sucesso");
                 }
             }
