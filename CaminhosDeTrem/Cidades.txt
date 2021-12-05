@@ -33,6 +33,7 @@ Montpellier    0.970 0.120
 Murcia         0.650 0.710
 Ourense        0.220 0.260
 Oviedo         0.350 0.150
+Palma          0.895 0.550
 Pau            0.700 0.150
 Perpignan      0.910 0.220
 Pombal         0.170 0.510

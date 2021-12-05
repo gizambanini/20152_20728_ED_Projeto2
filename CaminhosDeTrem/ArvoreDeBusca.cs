@@ -304,7 +304,7 @@ public int Largura()
         int xf, yf;
         if (raiz != null)
         {
-            Pen caneta = new Pen(Color.Red);
+            Pen caneta = new Pen(Color.Red, 200);
             xf = (int)Math.Round(x + Math.Cos(angulo) * comprimento);
             yf = (int)Math.Round(y + Math.Sin(angulo) * comprimento);
                 
@@ -379,6 +379,8 @@ public int Largura()
         if (atual == null)
         {
             atual = new NoArvore<Dado>(dadoLido);
+            //Atualiza o indice dos novos nós da árvore, como sendo o maior valor
+            atual.Indice = this.QtosNos();
         }
         else
             if (dadoLido.CompareTo(atual.Info) == 0)
@@ -429,6 +431,7 @@ public int Largura()
         
         }
 
+    //FIZEMOS
     public void LerVetorDeRegistros(Dado[] vetRegistros)
     {
         raiz = null;
@@ -456,6 +459,35 @@ public int Largura()
 
     }
 
+    private NoArvore<Dado> RetornarNoIndice(NoArvore<Dado> raiz, long indice)
+    {
+        if (raiz != null)
+        {
+            if(raiz.Indice != indice)
+            {
+                NoArvore<Dado> provisorio = null;
+                if (raiz.Esq != null)
+                {
+                   provisorio  = RetornarNoIndice(raiz.Esq, indice);
+                }
+
+                if (raiz.Dir != null && provisorio == null)
+                {
+                    provisorio = RetornarNoIndice(raiz.Dir, indice);
+                }
+                return provisorio;
+            }
+            return raiz;
+        }
+
+        return null;
+    }
+
+    public Dado NoIndice(long indice)
+    {
+        return RetornarNoIndice(raiz, indice).Info;
+    }
+    //
     public void GravarArquivoDeRegistros(string nomeArquivo)
     {
         var destino = new FileStream(nomeArquivo, FileMode.Create);

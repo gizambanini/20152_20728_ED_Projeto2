@@ -50,8 +50,8 @@ class Cidade: IComparable<Cidade>, IRegistro
             try
             {
                 string registro = arquivo.ReadLine();
-                int x = registro.Length;
                 Nome = registro.Substring(0, 15);
+                Nome.TrimEnd(); //Remove os espaços
                 CoordX = float.Parse(registro.Substring(15, 5));
                 CoordY = float.Parse(registro.Substring(21, 5));
             }
@@ -65,7 +65,7 @@ class Cidade: IComparable<Cidade>, IRegistro
     {
         if (arquivo != null)
         {
-            arquivo.Write(Nome);
+            arquivo.Write(Nome.PadRight(15));
             arquivo.Write(string.Format("{0:N3}", CoordX));     //Grava o número com 3 casas decimais
             arquivo.Write(" ");
             arquivo.WriteLine(string.Format("{0:N3}", CoordY)); //Grava o número com 3 casas decimais

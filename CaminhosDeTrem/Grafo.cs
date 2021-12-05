@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 class Grafo
 {
-    private const int NUM_VERTICES = 200;
+    private const int NUM_VERTICES = 1000;
     private Vertice[] vertices;
     private int[,] adjMatrix;
     int numVerts;
@@ -116,8 +116,9 @@ class Grafo
     public int IndiceVertice(string nome)
     {
         for (int j = 0; j < vertices.Length; j++)
-            if (vertices[j].Rotulo == nome)
-                return j;
+            if(vertices[j] != null)
+                if (vertices[j].Rotulo == nome)
+                    return j;
         return -1;
     }
     

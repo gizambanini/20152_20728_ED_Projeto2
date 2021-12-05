@@ -67,8 +67,8 @@
             this.lbCidade1 = new System.Windows.Forms.Label();
             this.btnIncluirLig = new System.Windows.Forms.Button();
             this.tbDataGridView = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvGrafo = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbApp.SuspendLayout();
             this.tbMapa.SuspendLayout();
             this.gbIncCidade.SuspendLayout();
@@ -403,6 +403,11 @@
             // upDistancia
             // 
             this.upDistancia.Location = new System.Drawing.Point(535, 61);
+            this.upDistancia.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.upDistancia.Name = "upDistancia";
             this.upDistancia.Size = new System.Drawing.Size(63, 30);
             this.upDistancia.TabIndex = 14;
@@ -478,15 +483,6 @@
             this.tbDataGridView.Text = "Tabela";
             this.tbDataGridView.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(31, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Mostrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dgvGrafo
             // 
             this.dgvGrafo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -496,6 +492,15 @@
             this.dgvGrafo.RowTemplate.Height = 24;
             this.dgvGrafo.Size = new System.Drawing.Size(1162, 480);
             this.dgvGrafo.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 53);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Mostrar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmCaminho
             // 
