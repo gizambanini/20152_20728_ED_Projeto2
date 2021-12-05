@@ -46,9 +46,9 @@ class Caminho
             {
                 string registro = arquivo.ReadLine();
                 Inicio    = registro.Substring(0, 15);
-                Fim       = registro.Substring(15, 15);
+                Fim       = registro.Substring(15, 16);
                 Distancia = int.Parse(registro.Substring(31, 3));
-                Passagem  = int.Parse(registro.Substring(35, 3));
+                Passagem  = int.Parse(registro.Substring(36, 3));
             }
             catch (Exception e)
             {
@@ -62,8 +62,9 @@ class Caminho
         {
             arquivo.Write(Inicio);
             arquivo.Write(Fim);
-            arquivo.Write(Distancia);
-            arquivo.WriteLine(Passagem);
+            arquivo.Write(Distancia.ToString().PadLeft(3, ' '));
+            arquivo.Write("  ");
+            arquivo.WriteLine(Passagem.ToString().PadLeft(3, ' '));
         }
     }
 }

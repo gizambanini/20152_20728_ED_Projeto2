@@ -12,22 +12,25 @@ using System.Windows.Forms;
 
 class Cidade: IComparable<Cidade>, IRegistro
 {
+    //Atributos
     private string nome;
     private float coordX, coordY;
-
 
     public string Nome { get => nome; set => nome = value; }
     public float CoordX { get => coordX; set => coordX = value; }
     public float CoordY { get => coordY; set => coordY = value; }
 
-    public Cidade()
+
+    //Métodos
+    
+    public Cidade() //construtor 
     {
         Nome = "";
         CoordX = 0.0f;
         CoordY = 0.0f;
     }
 
-    public Cidade(string nome, float x, float y)
+    public Cidade(string nome, float x, float y) //construtor c parâmetros
     {
         this.Nome = nome;
         this.CoordX = x;
@@ -44,6 +47,8 @@ class Cidade: IComparable<Cidade>, IRegistro
         return Nome;
     }
 
+
+    // Faz a leitura do arq (txt) e 
     public void LerRegistro(StreamReader arquivo, long qualRegistro)
     {
         if (arquivo != null)

@@ -22,7 +22,7 @@ namespace CaminhosDeTrem
 
         ArvoreDeBusca<Cidade> arv = new ArvoreDeBusca<Cidade>();
 
-        Cidade [] vetCidade  = new Cidade [System.IO.File.ReadAllLines(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt").Length];
+        Cidade [] vetCidade  = new Cidade [System.IO.File.ReadAllLines("..\\..\\Cidades.txt").Length];
         //Caminho[] vetCaminho = new Caminho[System.IO.File.ReadAllLines(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\GrafoTremEspanhaPortugal.txt").Length];
         List<Caminho> listaCaminho = new List<Caminho>(); 
         
@@ -35,9 +35,9 @@ namespace CaminhosDeTrem
         private Font fnt = new Font("Arial", 10);
         private void FrmCaminho_Load(object sender, System.EventArgs e)
         {
-            StreamReader srCidade = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
+            StreamReader srCidade = new StreamReader("..\\..\\Cidades.txt");
             int posicoesVetCidade = 0;
-            StreamReader srCaminho = new StreamReader(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\GrafoTremEspanhaPortugal.txt");
+            StreamReader srCaminho = new StreamReader("..\\..\\GrafoTremEspanhaPortugal.txt");
             
 
             //Criação do vetor de cidades com base no arquivo texto
@@ -57,7 +57,7 @@ namespace CaminhosDeTrem
                 listaCaminho.Add(cam);
             }
                 
-            //Lê o vetor e armazena osvalores de forma balanceada na árvore
+            //Lê o vetor e armazena os valores de forma balanceada na árvore
             arv.LerVetorDeRegistros(vetCidade);
 
             oGrafo = new Grafo(dgvGrafo);
@@ -68,8 +68,8 @@ namespace CaminhosDeTrem
         //VERIFICAR A ANCORAGEM DO MAPA
         private void pbMapa_MouseClick(object sender, MouseEventArgs e)
         {
-            txtX.Text = string.Format("{0:N3}", ((float)e.X / (float)pbMapa.Image.Width));
-            txtY.Text = string.Format("{0:N3}", ((float)e.Y / (float)pbMapa.Image.Height));
+            txtX.Text = string.Format("{0:N3}", ((float)e.X / (float)pbMapa.Width));
+            txtY.Text = string.Format("{0:N3}", ((float)e.Y / (float)pbMapa.Height));
         }
 
         private void btnIncluirCidade_Click(object sender, EventArgs e)
@@ -112,9 +112,7 @@ namespace CaminhosDeTrem
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Criar classe de conexoes
-            //Criar vertices e arestas a partir da arvore e do arquivo de conexoes
-            
-
+            //Criar vertices e arestas a partir da arvore e do arquivo de conexoes     
             //Cria os vertices do grafo a partir das cidades da arvore
             
             oGrafo.ExibirAdjacencias();
@@ -138,10 +136,15 @@ namespace CaminhosDeTrem
                 lsbCaminho.Items.Add(caminhoFinal);
                 lsbCaminho.Items.Add("");
                 //Tentar trocar para Replace, Remove
-                string[] cidades = caminhoFinal.Split(new string[] { " --> " }, StringSplitOptions.None);
+                caminhoFinal = caminhoFinal.Replace(" --> ", "*");
+                string[] cidades = caminhoFinal.Split('*');
 
-                if(caminhoFinal != "Não há caminho")
-                    MostrarCaminho(cidades);
+                if (caminhoFinal != "Não há caminho")
+                {
+                    CaminhoInfo(cidades, lsbCaminho);
+                }
+                
+                
             }
         }
 
@@ -163,23 +166,56 @@ namespace CaminhosDeTrem
                 oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Inicio.TrimEnd()), oGrafo.IndiceVertice(listaCaminho[i].Fim.TrimEnd()), listaCaminho[i].Distancia);
         }
 
-        private void MostrarCaminho(string[] cidVisitadas)
+        private void CaminhoInfo(string[] cidVisitadas, ListBox ls)
         {
             pbMapa.Refresh();
             Graphics g = pbMapa.CreateGraphics();
-            Pen pen = new Pen(Color.Red);
+            Pen pen = new Pen(Color.Red, 3);
+            int distancia = 0;
+            int preco = 0;
+            int hora;
+            double min;
             for (int i = 0; i < cidVisitadas.Length; i = i + 1)
             {
+                int distParcial = 0;
                 //Tentar corrigir verificando as posicoes seguintes do vetor 
                 int f = i;
                 if (i + 1 < cidVisitadas.Length)
                     f = i + 1;
                 
-                Cidade inicio = arv.NoIndice(oGrafo.IndiceVertice(cidVisitadas[i]));
-                Cidade fim = arv.NoIndice(oGrafo.IndiceVertice(cidVisitadas[f]));
-                g.DrawLine(pen, (float)(inicio.CoordX * pbMapa.Image.Width), (float)(inicio.CoordY * pbMapa.Image.Height), (float)(fim.CoordX * pbMapa.Image.Width), (float)(fim.CoordY * pbMapa.Image.Height));
+                Cidade inicio = arv.NoIndice(oGrafo.IndiceVertice(cidVisitadas[i])).Info;
+                Cidade fim = arv.NoIndice(oGrafo.IndiceVertice(cidVisitadas[f])).Info;
+                if(inicio != fim)
+                {
+                    distParcial = oGrafo.PesoAresta(oGrafo.IndiceVertice(cidVisitadas[i]), oGrafo.IndiceVertice(cidVisitadas[f]));
+                    distancia += distParcial; 
+                
+
+                    for (int posLista = 0; posLista < listaCaminho.Count; posLista++)
+                        if (listaCaminho[posLista].Inicio.TrimEnd() == inicio.Nome && listaCaminho[posLista].Fim.TrimEnd() == fim.Nome && listaCaminho[posLista].Distancia == distParcial)
+                            preco += listaCaminho[posLista].Passagem;
+                }
+                
+
+                g.DrawLine(pen, (float)(inicio.CoordX * pbMapa.Width), (float)(inicio.CoordY * pbMapa.Height), (float)(fim.CoordX * pbMapa.Width), (float)(fim.CoordY * pbMapa.Height));
 
             }
+            ls.Items.Add("Distância total: " + distancia);
+            ls.Items.Add("Preço total: " + preco);
+
+            hora = distancia / 200;
+            double resto = (distancia % 200);
+            min =  ((double)resto / (double)200) * 60;
+            /*
+             * distancia
+             * --------- = 200
+             * tempo
+             * horas e minutosss                     
+             */
+            if(hora == 0)
+                ls.Items.Add("Tempo viagem total: " + (int)min + "min" );
+            else
+                ls.Items.Add("Tempo viagem total: " + hora + "hr " + (int)min + "min");
         }
 
         private void btnIncluirLig_Click(object sender, EventArgs e)
@@ -228,8 +264,26 @@ namespace CaminhosDeTrem
                 else
                 {
                     //Excluir a cidade aqui
+                    /*
+                     40
+                     41 -> 40
+                     42 -> 41
+                     43 -> 42
+                     44 -> 43
+
+                     41 -> 40
+                     */
                     arv.Excluir(cidRemover);
+                    arv.ReorganizarIndicesNos(oGrafo.IndiceVertice(cidRemover.Nome)+1);
                     oGrafo.removerVertice(oGrafo.IndiceVertice(cidRemover.Nome));
+
+                    for (int i = 0; i < listaCaminho.Count; i++)
+                        if (listaCaminho[i].Inicio.TrimEnd() == cidRemover.Nome || listaCaminho[i].Fim.TrimEnd() == cidRemover.Nome)
+                        {
+                            listaCaminho.RemoveAt(i);
+                            i--;
+                        } 
+
                     MessageBox.Show("Cidade removida com sucesso");
                 }
             }
@@ -237,7 +291,11 @@ namespace CaminhosDeTrem
 
         private void FrmCaminho_FormClosing(object sender, FormClosingEventArgs e)
         {
-            arv.GravarArquivoDeRegistros(@"C:\Users\pedro\source\repos\ProjetoEDII\CaminhosDeTrem\Cidades.txt");
+            arv.GravarArquivoDeRegistros("..\\..\\Cidades.txt");
+            StreamWriter swCaminho = new StreamWriter("..\\..\\GrafoTremEspanhaPortugal.txt");
+            for (int i = 0; i < listaCaminho.Count; i++)
+                listaCaminho[i].GravarRegistro(swCaminho);
+            swCaminho.Close();
         }
     }
 }

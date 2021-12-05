@@ -14,7 +14,7 @@ class Grafo
     int numVerts;
     DataGridView dgv;   // para exibir a matriz de adjacência num formulário
 
-    /// DJIKSTRA
+     /// DJIKSTRA
     DistOriginal[] percurso;
     int infinity = 1000000;
     int verticeAtual;   // global usada para indicar o vértice atualmente sendo visitado 
@@ -109,10 +109,6 @@ class Grafo
         return vertices;
     }
 
-    //Ta dando erro p causa das diferencas entre os arquivos
-    //"Madrid    "
-    //vs.
-    //"Madrid   "
     public int IndiceVertice(string nome)
     {
         for (int j = 0; j < vertices.Length; j++)
@@ -125,6 +121,17 @@ class Grafo
     public int PesoAresta(int origem, int destino)
     {
         return adjMatrix[origem, destino];
+    }
+
+   
+
+    public void removerArestas(int vertice)
+    {
+        for (int j = 0; j < NUM_VERTICES; j++)
+                adjMatrix[vertice, j] = infinity;
+
+        for (int j = 0; j < NUM_VERTICES; j++)
+                adjMatrix[j, vertice] = infinity;
     }
     //
     public void ExibirVertice(int v)
@@ -409,10 +416,10 @@ class Grafo
                 {
                     percurso[coluna].verticePai = verticeAtual;
                     percurso[coluna].distancia = doInicioAteMargem;
-                    ExibirTabela(lista);
+                    //ExibirTabela(lista);  <---------------------------COMENTARIO
                 }
             }
-        lista.Items.Add("==================Caminho ajustado==============");
+        //lista.Items.Add("==================Caminho ajustado=============="); <---------------COMENTARIO
     }
 
     public void ExibirTabela(ListBox lista)
@@ -435,7 +442,7 @@ class Grafo
     public string ExibirPercursos(int inicioDoPercurso, int finalDoPercurso, ListBox lista)
     {
         string linha = "", resultado = "";
-        for (int j = 0; j < numVerts; j++)
+        /*for (int j = 0; j < numVerts; j++)
         {
             linha += vertices[j].Rotulo + "=";
             if (percurso[j].distancia == infinity)
@@ -447,7 +454,7 @@ class Grafo
         }
         lista.Items.Add(linha);
         lista.Items.Add("");
-        lista.Items.Add("");
+        lista.Items.Add("");*/
         lista.Items.Add("Caminho entre " + vertices[inicioDoPercurso].Rotulo +
                                    " e " + vertices[finalDoPercurso].Rotulo);
         lista.Items.Add("");
@@ -476,7 +483,5 @@ class Grafo
             resultado += " --> " + vertices[finalDoPercurso].Rotulo;
         return resultado;
     }
-
-
 
 }

@@ -304,7 +304,7 @@ public int Largura()
         int xf, yf;
         if (raiz != null)
         {
-            Pen caneta = new Pen(Color.Red, 200);
+            Pen caneta = new Pen(Color.Red);
             xf = (int)Math.Round(x + Math.Cos(angulo) * comprimento);
             yf = (int)Math.Round(y + Math.Sin(angulo) * comprimento);
                 
@@ -483,11 +483,24 @@ public int Largura()
         return null;
     }
 
-    public Dado NoIndice(long indice)
+    public NoArvore<Dado> NoIndice(long indice)
     {
-        return RetornarNoIndice(raiz, indice).Info;
+        return RetornarNoIndice(raiz, indice);
     }
-    //
+
+    public void ReorganizarIndicesNos(long inicio)
+    {
+        NoArvore<Dado> provis;
+        while ((provis = NoIndice(inicio)) != null)
+        {
+            provis.Indice = provis.Indice - 1;
+            
+            
+
+            inicio += 1;
+        }
+    }
+ //
     public void GravarArquivoDeRegistros(string nomeArquivo)
     {
         var destino = new FileStream(nomeArquivo, FileMode.Create);
@@ -628,6 +641,7 @@ public int Largura()
             else
             {                           // Guarda os dados do nó a excluir
                 atualAnt.Info = aux.Info;   // troca conteúdo!
+                atualAnt.Indice = aux.Indice;
                 atualAnt = aux;             // funciona com a passagem por referência
                 aux = aux.Esq;
             }

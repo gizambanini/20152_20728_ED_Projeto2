@@ -265,12 +265,15 @@
             // 
             // pbMapa
             // 
+            this.pbMapa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMapa.ImageLocation = "C:\\Users\\pedro\\source\\repos\\ProjetoEDII\\CaminhosDeTrem\\mapaEspanhaPortugal.jpg";
             this.pbMapa.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMapa.InitialImage")));
             this.pbMapa.Location = new System.Drawing.Point(457, 27);
             this.pbMapa.Name = "pbMapa";
             this.pbMapa.Size = new System.Drawing.Size(717, 578);
-            this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 0;
             this.pbMapa.TabStop = false;
             this.pbMapa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbMapa_MouseClick);

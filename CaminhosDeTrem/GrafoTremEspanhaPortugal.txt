@@ -1,9 +1,5 @@
-Madrid         Salamanca       220  150
 Salamanca      Guarda          160   90
 Guarda         Viseu            76   80
-Madrid         Albacete        257  280
-Madrid         Toledo           72  205
-Madrid         Valladolid      189  140
 Toledo         Cordoba         344  210
 Cordoba        Sevilha         140  220
 Sevilha        Huelva           94  201
@@ -56,7 +52,6 @@ Cordoba        Malaga          168  203
 Malaga         Granada          88   50
 Jaen           Granada          67   53
 Granada        El Ejido        113   37
-Madrid         Guadalajara      68   45
 Guadalajara    Zaragoza        257   72
 Barcelona      Mataro           31   31
 Mataro         Girona           80   44
