@@ -91,24 +91,29 @@ class Grafo
         adjMatrix[origem, destino] = peso;
     }
 
-    //FIZEMOS
+    //MÉTODOS QUE DESENVOLVEMOS
+
+    /*
+     * RESUMO:
+     * Cria um vértice no grafo com uma posição especificada no vetor
+     */
     public void NovoVertice(string label, long posic)
     {
-        vertices[posic] = new Vertice(label);
+        vertices[posic] = new Vertice(label); //Armazena o novo vértice em uma posição especificada do vetor
         numVerts++;
-        if (dgv != null)  // se foi passado como parâmetro um dataGridView para exibição
-        {              // se realiza o seu ajuste para a quantidade de vértices
+        if (dgv != null)
+        {              
             dgv.RowCount = numVerts + 1;
             dgv.ColumnCount = numVerts + 1;
             dgv.Columns[numVerts].Width = 45;
         }
     }
 
-    public Vertice[] Vetor()
-    {
-        return vertices;
-    }
-
+    /*
+     * RESUMO:
+     * Percorre o vetor de vértice e retorna o índice do vetor que possui o nome especificado como rótulo.
+     * Se o índice não for encontrado, retorna -1
+     */
     public int IndiceVertice(string nome)
     {
         for (int j = 0; j < vertices.Length; j++)
@@ -118,22 +123,17 @@ class Grafo
         return -1;
     }
     
+    /*
+     * RESUMO:
+     * Retorna o peso da aresta especificada
+     */
     public int PesoAresta(int origem, int destino)
     {
         return adjMatrix[origem, destino];
     }
 
-   
-
-    public void removerArestas(int vertice)
-    {
-        for (int j = 0; j < NUM_VERTICES; j++)
-                adjMatrix[vertice, j] = infinity;
-
-        for (int j = 0; j < NUM_VERTICES; j++)
-                adjMatrix[j, vertice] = infinity;
-    }
-    //
+  
+    //FIM DOS MÉTODOS QUE DESENVOLVEMOS
     public void ExibirVertice(int v)
     {
         Console.Write(vertices[v].Rotulo + " ");
@@ -192,14 +192,14 @@ class Grafo
     }
     private void moverLinhas(int row, int length)
     {
-        if (row != numVerts - 1)
-            for (int col = 0; col < length; col++)
+        if (row != numVerts)
+            for (int col = 0; col <= length; col++)
                 adjMatrix[row, col] = adjMatrix[row + 1, col];  // desloca para excluir
     }
     private void moverColunas(int col, int length)
     {
-        if (col != numVerts - 1)
-            for (int row = 0; row < length; row++)
+        if (col != numVerts)
+            for (int row = 0; row <= length; row++)
                 adjMatrix[row, col] = adjMatrix[row, col + 1]; // desloca para excluir
     }
     public void ExibirAdjacencias()
@@ -416,10 +416,10 @@ class Grafo
                 {
                     percurso[coluna].verticePai = verticeAtual;
                     percurso[coluna].distancia = doInicioAteMargem;
-                    //ExibirTabela(lista);  <---------------------------COMENTARIO
+                    //ExibirTabela(lista);  <---------------------------ATUALIZAMOS: Comentamos essa parte para não mostrar informações desnecessárias no caminho final
                 }
             }
-        //lista.Items.Add("==================Caminho ajustado=============="); <---------------COMENTARIO
+        //lista.Items.Add("==================Caminho ajustado=============="); <---------------ATUALIZAMOS: Comentamos essa parte para não mostrar informações desnecessárias no caminho final
     }
 
     public void ExibirTabela(ListBox lista)
@@ -442,7 +442,7 @@ class Grafo
     public string ExibirPercursos(int inicioDoPercurso, int finalDoPercurso, ListBox lista)
     {
         string linha = "", resultado = "";
-        /*for (int j = 0; j < numVerts; j++)
+        /*for (int j = 0; j < numVerts; j++) //------------> ATUALIZAMOS: Comentamos essa parte para não mostrar informações desnecessárias no caminho final
         {
             linha += vertices[j].Rotulo + "=";
             if (percurso[j].distancia == infinity)

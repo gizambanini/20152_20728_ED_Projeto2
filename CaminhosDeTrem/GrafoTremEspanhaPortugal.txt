@@ -1,5 +1,11 @@
+Madrid         Salamanca       220  150
 Salamanca      Guarda          160   90
 Guarda         Viseu            76   80
+Madrid         Albacete        257  280
+Madrid         Toledo           72  205
+Madrid         Valladolid      189  140
+Toledo         Cordoba         344  210
+Cordoba        Sevilha         140  220
 Sevilha        Huelva           94  201
 Sevilha        Cadiz           121   80
 Sevilha        Caceres         267  120
@@ -45,10 +51,19 @@ Santiago de C. A Coruna         64   67
 Santiago de C. Ourense          82  136
 A Coruna       Lugo             80   47
 Lugo           Ponferrada       93   71
+Cordoba        Jaen            120   73
+Cordoba        Malaga          168  203
 Malaga         Granada          88   50
 Jaen           Granada          67   53
 Granada        El Ejido        113   37
+Madrid         Guadalajara      68   45
 Guadalajara    Zaragoza        257   72
 Barcelona      Mataro           31   31
 Mataro         Girona           80   44
 Girona         Perpignan        93   38
+Madrid         Oceano            1    1
+Barcelona      Madrid            1    1
+Oceano         Barcelona        22   11
+Oceano         Zaragoza          1   10
+Alger          Oceano          300   20
+Viseu          Vigo            300   20

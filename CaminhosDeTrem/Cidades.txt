@@ -1,5 +1,6 @@
 A Coruna       0.190 0.150
 Albacete       0.600 0.600
+Alger          0.925 0.838
 Alicante       0.690 0.670
 Barcelona      0.860 0.360
 Bilbao         0.540 0.160
@@ -10,6 +11,7 @@ Cadiz          0.320 0.850
 Cartagena      0.660 0.750
 Castelo Branco 0.250 0.520
 Coimbra        0.190 0.480
+Cordoba        0.420 0.720
 El Ejido       0.550 0.830
 Gijon          0.360 0.130
 Girona         0.900 0.290
@@ -25,12 +27,15 @@ Logrono        0.570 0.240
 Lorca          0.610 0.740
 Loule          0.210 0.790
 Lugo           0.240 0.190
+Madrid         0.490 0.460
 Malaga         0.440 0.830
 Mataro         0.880 0.350
 Montpellier    0.970 0.120
 Murcia         0.650 0.710
+Oceano         0.056 0.316
 Ourense        0.220 0.260
 Oviedo         0.350 0.150
+Palma          0.896 0.547
 Pau            0.700 0.150
 Perpignan      0.910 0.220
 Pombal         0.170 0.510

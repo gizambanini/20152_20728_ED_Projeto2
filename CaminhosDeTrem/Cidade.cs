@@ -48,7 +48,7 @@ class Cidade: IComparable<Cidade>, IRegistro
     }
 
 
-    // Faz a leitura do arq (txt) e 
+    // Faz a leitura do arq (txt) e atribui os valores lidos para o nome, X e Y 
     public void LerRegistro(StreamReader arquivo, long qualRegistro)
     {
         if (arquivo != null)

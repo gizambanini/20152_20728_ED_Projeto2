@@ -379,8 +379,7 @@ public int Largura()
         if (atual == null)
         {
             atual = new NoArvore<Dado>(dadoLido);
-            //Atualiza o indice dos novos nós da árvore, como sendo o maior valor
-            atual.Indice = this.QtosNos();
+            atual.Indice = this.QtosNos(); //-----------> ATUALIZAMOS: Atualiza o indice dos novos nós da árvore, como sendo o maior valor
         }
         else
             if (dadoLido.CompareTo(atual.Info) == 0)
@@ -431,11 +430,15 @@ public int Largura()
         
         }
 
-    //FIZEMOS
+    //MÉTODOS QUE DESENVOLVEMOS
+
+    /*
+     * RESUMO:
+     * Percorre o vetor de registros de forma particionada
+     */
     public void LerVetorDeRegistros(Dado[] vetRegistros)
     {
         raiz = null;
-        //Dado dado = new Dado();
         Particionar(0, vetRegistros.Length - 1, ref raiz);
         
         void Particionar(long inicio, long fim, ref NoArvore<Dado> atual)
@@ -449,16 +452,20 @@ public int Largura()
                 this.Incluir(dado);           // inclui o dado na árvore
                 atual = new NoArvore<Dado>(dado, meio);
                 var novoEsq = atual.Esq;
-                Particionar(inicio, meio - 1, ref novoEsq);   // Particiona à esquerda 
+                Particionar(inicio, meio - 1, ref novoEsq);     // Faz o processo com o filho esquerdo da árvore
                 atual.Esq = novoEsq;
                 var novoDir = atual.Dir;
-                Particionar(meio + 1, fim, ref novoDir);        // Particiona à direita  
+                Particionar(meio + 1, fim, ref novoDir);        // Faz o processo com o filho direito da árvore  
                 atual.Dir = novoDir;
             }
         }
 
     }
 
+    /*
+     * RESUMO:
+     * Método privado que percorre a árvore recursivamente, procurando na árvore o nó que possui o índice especificado
+     */
     private NoArvore<Dado> RetornarNoIndice(NoArvore<Dado> raiz, long indice)
     {
         if (raiz != null)
@@ -483,24 +490,35 @@ public int Largura()
         return null;
     }
 
+    /*
+     * RESUMO:
+     * Método público para retornar o nó com o índice especificado
+     */
     public NoArvore<Dado> NoIndice(long indice)
     {
         return RetornarNoIndice(raiz, indice);
     }
 
-    public void ReorganizarIndicesNos(long inicio)
-    {
-        NoArvore<Dado> provis;
-        while ((provis = NoIndice(inicio)) != null)
-        {
-            provis.Indice = provis.Indice - 1;
-            
-            
 
-            inicio += 1;
+    /*
+     * RESUMO:
+     * Reorganiza os índices do nós a partir de um número.
+     * Exemplo: se formos excluir o nó com índice 22, chamaremos o método passando como parâmetro o índice 23,
+     *          dessa maneira, fazendo com que o índice 23 vire 22, o 24 vire 23, assim por diante.
+     */
+    public void ReorganizarIndicesNos(long inicio)  
+    {
+        NoArvore<Dado> provis; //cria árvore auxiliar (provisoria)
+        while ((provis = NoIndice(inicio)) != null)   //Enquanto o método NoIndice(inicio) retornar algo diferente de null
+        {                                             //ou seja, enquanto existir um nó com o índice especificado
+            
+            provis.Indice = provis.Indice - 1; //Índice do nó provis recebe o índice anterior
+
+            inicio += 1; ; //incrementamos a variável início
         }
     }
- //
+
+    //FIM DOS MÉTODOS QUE DESENVOLVEMOS
     public void GravarArquivoDeRegistros(string nomeArquivo)
     {
         var destino = new FileStream(nomeArquivo, FileMode.Create);
@@ -514,9 +532,7 @@ public int Largura()
             if (r != null)
             {
                 GravarInOrdem(r.Esq);
-
                 r.Info.GravarRegistro(arquivo);
-
                 GravarInOrdem(r.Dir);
                 
             }
@@ -641,7 +657,7 @@ public int Largura()
             else
             {                           // Guarda os dados do nó a excluir
                 atualAnt.Info = aux.Info;   // troca conteúdo!
-                atualAnt.Indice = aux.Indice;
+                atualAnt.Indice = aux.Indice;  //--------------> ATUALIZAMOS: troca o índice junto com a informação do nó
                 atualAnt = aux;             // funciona com a passagem por referência
                 aux = aux.Esq;
             }

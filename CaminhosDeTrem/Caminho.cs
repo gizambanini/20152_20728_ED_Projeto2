@@ -32,14 +32,13 @@ class Caminho
     public Caminho(string cidade1, string cidade2, int distancia, int passagem)
     {
         Inicio = cidade1.PadRight(15);
-        Fim = cidade2.PadRight(15);
+        Fim = cidade2.PadRight(16);
         Distancia = distancia;
         Passagem = passagem;
     }
 
     public override string ToString()
     {
-        //Colocar PadRight
         return Inicio;
     }
 
