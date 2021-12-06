@@ -16,13 +16,13 @@ class Cidade: IComparable<Cidade>, IRegistro
     private string nome;
     private float coordX, coordY;
 
-    public string Nome { get => nome; set => nome = value; }
+    public string Nome { get => nome.TrimEnd(); set => nome = value; }
     public float CoordX { get => coordX; set => coordX = value; }
     public float CoordY { get => coordY; set => coordY = value; }
 
 
-    //Métodos
     
+    //Métodos
     public Cidade() //construtor 
     {
         Nome = "";
@@ -48,7 +48,7 @@ class Cidade: IComparable<Cidade>, IRegistro
     }
 
 
-    // Faz a leitura do arq (txt) e atribui os valores lidos para o nome, X e Y 
+    // Faz a leitura do arquivo texto e atribui os valores lidos para o nome, X e Y 
     public void LerRegistro(StreamReader arquivo, long qualRegistro)
     {
         if (arquivo != null)
@@ -56,7 +56,7 @@ class Cidade: IComparable<Cidade>, IRegistro
             {
                 string registro = arquivo.ReadLine();
                 Nome = registro.Substring(0, 15);
-                Nome.TrimEnd(); //Remove os espaços
+                //Nome; //Remove os espaços
                 CoordX = float.Parse(registro.Substring(15, 5));
                 CoordY = float.Parse(registro.Substring(21, 5));
             }

@@ -18,14 +18,16 @@ namespace CaminhosDeTrem
 
     public partial class FrmCaminho : Form
     {
-        //ARRUMAR LINK DA IMAGEM NO PICTURE BOX E DO FILE
-        //Se precisar, arrumar o list
         ArvoreDeBusca<Cidade> arv = new ArvoreDeBusca<Cidade>();
 
         Cidade [] vetCidade  = new Cidade [System.IO.File.ReadAllLines("..\\..\\Cidades.txt").Length];
         List<Caminho> listaCaminho = new List<Caminho>(); 
         
         Grafo oGrafo;
+
+        //Variável global que armazena o último caminho desenhado
+        //Serve para permitir o redesenho do mapa, ao redimensionar o formulário
+        string[] cidadesVisitadasRedimensionar;
         public FrmCaminho()
         {
             InitializeComponent();
@@ -34,6 +36,9 @@ namespace CaminhosDeTrem
         private Font fnt = new Font("Arial", 10);
         private void FrmCaminho_Load(object sender, System.EventArgs e)
         {
+            //Carrega a imagem do mapa, com base no diretório
+            pbMapa.ImageLocation = "..\\..\\mapaEspanhaPortugal.jpg";
+
             StreamReader srCidade = new StreamReader("..\\..\\Cidades.txt");
             int posicoesVetCidade = 0;
             StreamReader srCaminho = new StreamReader("..\\..\\GrafoTremEspanhaPortugal.txt");
@@ -44,7 +49,7 @@ namespace CaminhosDeTrem
             {
                 string regCidade = srCidade.ReadLine();
                 Cidade cid = new Cidade(regCidade.Substring(0, 15), float.Parse(regCidade.Substring(15, 5)), float.Parse(regCidade.Substring(21, 5)));
-                cid.Nome = cid.Nome.TrimEnd(); //Talvez tirar dps
+                //cid.Nome = cid.Nome.TrimEnd(); //Talvez tirar dps
                 vetCidade[posicoesVetCidade] = cid;
                 posicoesVetCidade++;
             }
@@ -157,6 +162,9 @@ namespace CaminhosDeTrem
                 //Limpa o que tiver sido desenhado no mapa
                 pbMapa.Refresh();
 
+                //Faz essa atribuição, para permitir o redesenho do caminho, ao redimensionar o mapa
+                cidadesVisitadasRedimensionar = cidades;
+                
                 //Verifica se existe um caminho, antes de chamar o método para desenhar o caminho
                 if (caminhoFinal != "Não há caminho")
                 {
@@ -176,7 +184,7 @@ namespace CaminhosDeTrem
                     CriaVertices(raiz.Esq);
                 if (raiz.Dir != null)
                     CriaVertices(raiz.Dir);
-                oGrafo.NovoVertice(raiz.Info.Nome.TrimEnd(), raiz.Indice); //Cria um vértice com o nome e o índice da raiz
+                oGrafo.NovoVertice(raiz.Info.Nome, raiz.Indice); //Cria um vértice com o nome e o índice da raiz
             }
         }
 
@@ -187,7 +195,6 @@ namespace CaminhosDeTrem
             for (int i = 0; i < listaCaminho.Count; i++)
             {
                 oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Inicio), oGrafo.IndiceVertice(listaCaminho[i].Fim), listaCaminho[i].Distancia);
-                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Fim), oGrafo.IndiceVertice(listaCaminho[i].Inicio), listaCaminho[i].Distancia); //Possibilitar volta do caminhos
             }
                 
         }
@@ -221,10 +228,9 @@ namespace CaminhosDeTrem
                     //Soma o valor da distância parcial ao valor da distância total
                     distancia += distParcial; 
                 
-
+                    //Procura na lista de caminhos, um caminho que possua os atributos indicados (Inicio, Fim e Distancia) para pegar o valor da passagem cadastrada
                     for (int posLista = 0; posLista < listaCaminho.Count; posLista++)
-                        if (listaCaminho[posLista].Inicio == inicio.Nome && listaCaminho[posLista].Fim == fim.Nome && listaCaminho[posLista].Distancia == distParcial 
-                            || listaCaminho[posLista].Inicio == fim.Nome && listaCaminho[posLista].Fim == inicio.Nome && listaCaminho[posLista].Distancia == distParcial)
+                        if (listaCaminho[posLista].Inicio == inicio.Nome && listaCaminho[posLista].Fim == fim.Nome && listaCaminho[posLista].Distancia == distParcial)
                             preco += listaCaminho[posLista].Passagem;
                 }
                 
@@ -273,8 +279,6 @@ namespace CaminhosDeTrem
                     listaCaminho.Add(cam);
                     //Cria uma aresta no grafo, tendo como índices: o índice da cidade inicial e o índice da cidade final. Além de ter como peso, a distância mostrada no NumericUpDown
                     oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade1.Text), oGrafo.IndiceVertice(txtCidade2.Text), Decimal.ToInt32(upDistancia.Value));
-                    //Cria uma aresta com os índices invertidos
-                    oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade2.Text), oGrafo.IndiceVertice(txtCidade1.Text), Decimal.ToInt32(upDistancia.Value));
                     MessageBox.Show("Caminho incluído com sucesso");
                 }
             }
@@ -341,6 +345,16 @@ namespace CaminhosDeTrem
         {
             //Mostra as adjacências do grafo, no datagridview criado
             oGrafo.ExibirAdjacencias();
+        }
+
+        private void FrmCaminho_ResizeEnd(object sender, EventArgs e)
+        {
+            //Se existir algo no vetor de cidades desenhadas
+            if(cidadesVisitadasRedimensionar != null)
+            {
+                //Desenha novamente o caminho
+                CaminhoInfo(cidadesVisitadasRedimensionar, lsbCaminho);               
+            }
         }
     }
 }

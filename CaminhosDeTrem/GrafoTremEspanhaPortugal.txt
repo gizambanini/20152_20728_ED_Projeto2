@@ -61,7 +61,3 @@ Guadalajara    Zaragoza        257   72
 Barcelona      Mataro           31   31
 Mataro         Girona           80   44
 Girona         Perpignan        93   38
-Madrid         Oceano            1    1
-Barcelona      Madrid            1    1
-Oceano         Barcelona        22   11
-Salamanca      Andorra         123  100

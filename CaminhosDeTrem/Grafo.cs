@@ -111,7 +111,7 @@ class Grafo
 
     /*
      * RESUMO:
-     * Percorre o vetor de vértice e retorna o índice do vetor que possui o nome especificado como rótulo.
+     * Percorre o vetor de vértices e retorna o índice do vetor que possui o nome especificado como rótulo.
      * Se o índice não for encontrado, retorna -1
      */
     public int IndiceVertice(string nome)

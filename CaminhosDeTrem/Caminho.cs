@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 class Caminho
 {
+    //Atributos
     private string inicio, fim;
     private int distancia, passagem;
 
@@ -21,6 +22,7 @@ class Caminho
     public int Distancia { get => distancia; set => distancia = value; }
     public int Passagem { get => passagem; set => passagem = value; }
 
+    //Métodos
     public Caminho()
     {
         Inicio = "";
@@ -31,8 +33,8 @@ class Caminho
 
     public Caminho(string cidade1, string cidade2, int distancia, int passagem)
     {
-        Inicio = cidade1.PadRight(15);
-        Fim = cidade2.PadRight(16);
+        Inicio = cidade1;
+        Fim = cidade2;
         Distancia = distancia;
         Passagem = passagem;
     }
@@ -42,6 +44,7 @@ class Caminho
         return Inicio;
     }
 
+    //Lê um registro do arquivo e armazena no objeto atual
     public void LerRegistro(StreamReader arquivo)
     {
         if (arquivo != null)
@@ -59,6 +62,7 @@ class Caminho
             }
     }
 
+    //Grava o registro no arquivo especificado, obedecendo à formatação pedida
     public void GravarRegistro(StreamWriter arquivo)
     {
         if (arquivo != null)

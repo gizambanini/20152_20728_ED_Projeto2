@@ -269,7 +269,7 @@
             this.pbMapa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbMapa.ImageLocation = "C:\\Users\\pedro\\source\\repos\\ProjetoEDII\\CaminhosDeTrem\\mapaEspanhaPortugal.jpg";
+            this.pbMapa.ImageLocation = "";
             this.pbMapa.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMapa.InitialImage")));
             this.pbMapa.Location = new System.Drawing.Point(457, 27);
             this.pbMapa.Name = "pbMapa";
@@ -518,6 +518,8 @@
             this.Text = "Caminhos de Trem";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCaminho_FormClosing);
             this.Load += new System.EventHandler(this.FrmCaminho_Load);
+            this.ResizeEnd += new System.EventHandler(this.FrmCaminho_ResizeEnd);
+            this.Resize += new System.EventHandler(this.FrmCaminho_Resize);
             this.tbApp.ResumeLayout(false);
             this.tbMapa.ResumeLayout(false);
             this.tbMapa.PerformLayout();
