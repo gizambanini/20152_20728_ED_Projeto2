@@ -336,24 +336,21 @@
             // 
             // gbRemoverCidade
             // 
-            this.gbRemoverCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbRemoverCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.gbRemoverCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.gbRemoverCidade.Controls.Add(this.btnRemover);
             this.gbRemoverCidade.Controls.Add(this.txtNomeRem);
             this.gbRemoverCidade.Controls.Add(this.label1);
             this.gbRemoverCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRemoverCidade.Location = new System.Drawing.Point(7, 387);
+            this.gbRemoverCidade.Location = new System.Drawing.Point(664, 22);
             this.gbRemoverCidade.Name = "gbRemoverCidade";
-            this.gbRemoverCidade.Size = new System.Drawing.Size(1162, 145);
+            this.gbRemoverCidade.Size = new System.Drawing.Size(505, 514);
             this.gbRemoverCidade.TabIndex = 2;
             this.gbRemoverCidade.TabStop = false;
             this.gbRemoverCidade.Text = "Remoção de Cidades";
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(866, 56);
+            this.btnRemover.Location = new System.Drawing.Point(191, 297);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(153, 59);
             this.btnRemover.TabIndex = 4;
@@ -379,7 +376,7 @@
             // 
             // gbIncluirLigacoes
             // 
-            this.gbIncluirLigacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
+            this.gbIncluirLigacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gbIncluirLigacoes.Controls.Add(this.upPreco);
             this.gbIncluirLigacoes.Controls.Add(this.upDistancia);
             this.gbIncluirLigacoes.Controls.Add(this.lbPreco);
@@ -390,9 +387,9 @@
             this.gbIncluirLigacoes.Controls.Add(this.lbCidade1);
             this.gbIncluirLigacoes.Controls.Add(this.btnIncluirLig);
             this.gbIncluirLigacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbIncluirLigacoes.Location = new System.Drawing.Point(7, 58);
+            this.gbIncluirLigacoes.Location = new System.Drawing.Point(7, 22);
             this.gbIncluirLigacoes.Name = "gbIncluirLigacoes";
-            this.gbIncluirLigacoes.Size = new System.Drawing.Size(1162, 246);
+            this.gbIncluirLigacoes.Size = new System.Drawing.Size(631, 514);
             this.gbIncluirLigacoes.TabIndex = 1;
             this.gbIncluirLigacoes.TabStop = false;
             this.gbIncluirLigacoes.Text = "Inclusão de Ligações entre Cidades";
@@ -468,7 +465,7 @@
             // 
             // btnIncluirLig
             // 
-            this.btnIncluirLig.Location = new System.Drawing.Point(866, 75);
+            this.btnIncluirLig.Location = new System.Drawing.Point(229, 297);
             this.btnIncluirLig.Name = "btnIncluirLig";
             this.btnIncluirLig.Size = new System.Drawing.Size(153, 59);
             this.btnIncluirLig.TabIndex = 7;
@@ -502,6 +499,7 @@
             // 
             // btnMostrarGrafo
             // 
+            this.btnMostrarGrafo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarGrafo.Location = new System.Drawing.Point(31, 39);
             this.btnMostrarGrafo.Name = "btnMostrarGrafo";
             this.btnMostrarGrafo.Size = new System.Drawing.Size(122, 53);

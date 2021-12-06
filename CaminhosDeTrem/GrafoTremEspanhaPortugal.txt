@@ -64,6 +64,4 @@ Girona         Perpignan        93   38
 Madrid         Oceano            1    1
 Barcelona      Madrid            1    1
 Oceano         Barcelona        22   11
-Oceano         Zaragoza          1   10
-Alger          Oceano          300   20
-Viseu          Vigo            300   20
+Salamanca      Andorra         123  100

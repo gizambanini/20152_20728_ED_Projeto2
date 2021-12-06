@@ -184,10 +184,10 @@ class Grafo
         numVerts--;
         if (dgv != null)
         {
-            MessageBox.Show("Matriz de Adjacências após remover vértice " +
-                   Convert.ToString(vert));
+            //MessageBox.Show("Matriz de Adjacências após remover vértice " +
+              //     Convert.ToString(vert)); //---------------->ATUALIZAÇÃO: Comentamos essa parte para não exibir informações desnecessárias no programa
             ExibirAdjacencias();
-            MessageBox.Show("Retornando à ordenação");
+            //MessageBox.Show("Retornando à ordenação");
         }
     }
     private void moverLinhas(int row, int length)

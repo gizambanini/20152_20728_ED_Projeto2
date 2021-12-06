@@ -16,8 +16,8 @@ class Caminho
     private int distancia, passagem;
 
 
-    public string Inicio { get => inicio; set => inicio = value; }
-    public string Fim { get => fim; set => fim = value; }
+    public string Inicio { get => inicio.TrimEnd(); set => inicio = value; }
+    public string Fim { get => fim.TrimEnd(); set => fim = value; }
     public int Distancia { get => distancia; set => distancia = value; }
     public int Passagem { get => passagem; set => passagem = value; }
 
@@ -63,8 +63,8 @@ class Caminho
     {
         if (arquivo != null)
         {
-            arquivo.Write(Inicio);
-            arquivo.Write(Fim);
+            arquivo.Write(Inicio.PadRight(15));
+            arquivo.Write(Fim.PadRight(16));
             arquivo.Write(Distancia.ToString().PadLeft(3, ' '));
             arquivo.Write("  ");
             arquivo.WriteLine(Passagem.ToString().PadLeft(3, ' '));

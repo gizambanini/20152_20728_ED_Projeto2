@@ -110,6 +110,7 @@ namespace CaminhosDeTrem
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            //Chama o método de desenhar a árvore
             arv.DesenharArvore(true, arv.Raiz, (int)pnlArvore.Width / 2, 0,
                   Math.PI / 2, Math.PI / 2.2, 300, pnlArvore.CreateGraphics());
 
@@ -119,18 +120,16 @@ namespace CaminhosDeTrem
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //Criar classe de conexoes
-            //Criar vertices e arestas a partir da arvore e do arquivo de conexoes     
-            //Cria os vertices do grafo a partir das cidades da arvore
-            
-            
+            //Usa o método IndiceVertice do grafo, para retornar os vértices com os rótulos especificados nos campos de Inicio e Fim
             int ori = oGrafo.IndiceVertice(txtInicio.Text);
             int des = oGrafo.IndiceVertice(txtFim.Text);
+
             //Printa a mensagem abaixo, se a cidade especificada como origem, não existir no grafo
             if (ori == -1)
             {
                 MessageBox.Show("A cidade " + txtInicio.Text + " não está cadastrada");
             }
+
             //Printa a mensagem abaixo, se a cidade especificada como destino, não existir no grafo
             else if (des == -1)
             {
@@ -139,9 +138,8 @@ namespace CaminhosDeTrem
             else
             {
                 lsbCaminho.Items.Clear();
-                lsbCaminho.Items.Add("");
-                lsbCaminho.Items.Add("Menores caminhos:");
-                lsbCaminho.Items.Add("");
+
+                //Retorna o caminho de origem a destino no grafo
                 string caminhoFinal = oGrafo.Caminho(ori, des, lsbCaminho);
                 lsbCaminho.Items.Add(caminhoFinal);
                 lsbCaminho.Items.Add("");
@@ -182,13 +180,14 @@ namespace CaminhosDeTrem
             }
         }
 
-        //VERIFICAR RESPOSTA DO CHICO
+        
         private void CriaArestas()
         {
+            //Percorre a lista de caminho, criando arestas com Inicio, Fim e Peso com base nos elementos guardadados na lista
             for (int i = 0; i < listaCaminho.Count; i++)
             {
-                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Inicio.TrimEnd()), oGrafo.IndiceVertice(listaCaminho[i].Fim.TrimEnd()), listaCaminho[i].Distancia);
-                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Fim.TrimEnd()), oGrafo.IndiceVertice(listaCaminho[i].Inicio.TrimEnd()), listaCaminho[i].Distancia); //Possibilitar volta do caminhos
+                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Inicio), oGrafo.IndiceVertice(listaCaminho[i].Fim), listaCaminho[i].Distancia);
+                oGrafo.NovaAresta(oGrafo.IndiceVertice(listaCaminho[i].Fim), oGrafo.IndiceVertice(listaCaminho[i].Inicio), listaCaminho[i].Distancia); //Possibilitar volta do caminhos
             }
                 
         }
@@ -224,8 +223,8 @@ namespace CaminhosDeTrem
                 
 
                     for (int posLista = 0; posLista < listaCaminho.Count; posLista++)
-                        if (listaCaminho[posLista].Inicio.TrimEnd() == inicio.Nome && listaCaminho[posLista].Fim.TrimEnd() == fim.Nome && listaCaminho[posLista].Distancia == distParcial 
-                            || listaCaminho[posLista].Inicio.TrimEnd() == fim.Nome && listaCaminho[posLista].Fim.TrimEnd() == inicio.Nome && listaCaminho[posLista].Distancia == distParcial)
+                        if (listaCaminho[posLista].Inicio == inicio.Nome && listaCaminho[posLista].Fim == fim.Nome && listaCaminho[posLista].Distancia == distParcial 
+                            || listaCaminho[posLista].Inicio == fim.Nome && listaCaminho[posLista].Fim == inicio.Nome && listaCaminho[posLista].Distancia == distParcial)
                             preco += listaCaminho[posLista].Passagem;
                 }
                 
@@ -240,6 +239,8 @@ namespace CaminhosDeTrem
             hora = distancia / 200;  //calcula horas
             double resto = (distancia % 200);  
             min =  ((double)resto / (double)200) * 60; //calcula minutos
+            
+            //Verificação para não printar 0 horas
             if(hora == 0) 
                 ls.Items.Add("Tempo viagem total: " + (int)min + "min" );
             else
@@ -251,6 +252,7 @@ namespace CaminhosDeTrem
             //Verifica se os campos de criação de ligação, foram preenchidos corretamente
             if(txtCidade1.Text != "" && txtCidade2.Text != "" && upDistancia.Value != 0 && upPreco.Value != 0)
             {
+                //Cria as cidades para usar de vértice na aresta
                 Cidade cid1 = new Cidade();
                 cid1.Nome = txtCidade1.Text;
                 Cidade cid2 = new Cidade();
@@ -269,8 +271,9 @@ namespace CaminhosDeTrem
                     Caminho cam = new Caminho(txtCidade1.Text, txtCidade2.Text, Decimal.ToInt32(upDistancia.Value), Decimal.ToInt32(upPreco.Value));
                     //Adiciona o caminho especificado na lista, para facilitar a gravação no arquivo
                     listaCaminho.Add(cam);
-                    //Cria uma aresta no grafo, tendo como índices: o índice da cidade inicial e o índice da cidade final
+                    //Cria uma aresta no grafo, tendo como índices: o índice da cidade inicial e o índice da cidade final. Além de ter como peso, a distância mostrada no NumericUpDown
                     oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade1.Text), oGrafo.IndiceVertice(txtCidade2.Text), Decimal.ToInt32(upDistancia.Value));
+                    //Cria uma aresta com os índices invertidos
                     oGrafo.NovaAresta(oGrafo.IndiceVertice(txtCidade2.Text), oGrafo.IndiceVertice(txtCidade1.Text), Decimal.ToInt32(upDistancia.Value));
                     MessageBox.Show("Caminho incluído com sucesso");
                 }
@@ -311,7 +314,7 @@ namespace CaminhosDeTrem
 
                     //Percorre a lista de caminhos, verificando se o Inicio ou Fim armazenados em suas posições são iguais ao nome da cidade excluída 
                     for (int i = 0; i < listaCaminho.Count; i++)
-                        if (listaCaminho[i].Inicio.TrimEnd() == cidRemover.Nome || listaCaminho[i].Fim.TrimEnd() == cidRemover.Nome)
+                        if (listaCaminho[i].Inicio == cidRemover.Nome || listaCaminho[i].Fim == cidRemover.Nome)
                         {
                             listaCaminho.RemoveAt(i); //Remove a posição especificada da lista.
                             i--;                      //Na remoção, a lista reorganiza suas posições. 

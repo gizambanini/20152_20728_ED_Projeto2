@@ -2,6 +2,7 @@ A Coruna       0.190 0.150
 Albacete       0.600 0.600
 Alger          0.925 0.838
 Alicante       0.690 0.670
+Andorra        0.825 0.240
 Barcelona      0.860 0.360
 Bilbao         0.540 0.160
 Braga          0.190 0.340
